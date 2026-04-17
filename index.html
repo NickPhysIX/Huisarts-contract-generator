@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Contract">
+<meta name="theme-color" content="#1a365d">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/json,{%22name%22:%20%22Contractgenerator%20Waarneming%22,%20%22short_name%22:%20%22Contract%22,%20%22start_url%22:%20%22.%22,%20%22display%22:%20%22standalone%22,%20%22background_color%22:%20%22%231a365d%22,%20%22theme_color%22:%20%22%231a365d%22,%20%22icons%22:%20[{%22src%22:%20%22data:image/png%3Bbase64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAMkElEQVR4nO2dfVBU1xXAz9tdFkEWkF1BFOQbxU%2BoKArU749YPwJOY2sLNOnUj9qYxEynaZwmjZ1k2qQhajSoqe04JlbHiZmoqdVYlDRadEYRE79QMAoKCiIg8iGyu/3j4fOx%2B%2B7yHuy%2Be/d5fnPGWd69%2B/bce86ee859763c4Am5gCBS6GgrgLALOgdCxADA0dYBYRQD%2BgZCAiMHQgRzDoSIATiMHIg0GDkQIphzIESwWkGIGDj0DoQA5hwIEXQOhAiWsggRjBwIESxlESJYyiJEMHIgRDDnQIhgtYIQwciBEMHtc4QIRg6ECOYcCBGMHAgRdA6ECC4rCBGMHAgR3D5HiHjZhbeqoo9oqyDBqct304ZbZHaOnPobjyrjRriIKd6ha1XRJtoqEDl1%2BS4AyPcPAIic%2BqLH1HEbOg6AfWHZMwR4F5FJVdEm6rPao%2BhoK9CzVHqDZ/Ao8o/Kok3U59a16Ggr0INUFm30nC09gUL/2Eh9hl0I%2B5HD%2B1DkH7Sn15Uwvc9ReexD2ir0Evn%2BwfIYcYfUUyiob1k1AdORw9tRuL4wBzqHZ/Fq/8BlxeP0vL6wagKMHGrgpfGD8VJWO7j0D%2BrzTChl6avwNLgGAJD9g/o8kwRzDlWRzj9YNQHmHGrjRfkH5hwUcPIP6vMsLWxfeNMu3fyD%2BjwTBCMHNUT%2BQX2epQVzDpownn9gtUKZU5fvMmsCA20FtICiu0e9CFxWECL4Ewz0YdYEXvbcijZh1QT4xBsLMGoCzDkQIljKMgCrJsDIgRDBnIMFGDUBVisMwKoJMHKwAKMm0Mj2%2Bb9OVdBWwZF5aXG0VegrWrhkz6BngDKtqM%2BztBhYLaOeIpg1AZayCBEtLCtsru5KtKI%2Bz4RlRbYJmIZN/5ALqybAUpYFGDUB5hwIEbzwxgCsmgAjB0IEcw4WYNQEGDkQIphzMACrJjAwqpdCbDeeoa2CI7qoQzJ7MmsCLeyQMugZoEwr6vOs6R1S74ZVE2BCihDRwrIif3VXEyVaUZ9nTS8rbPqHXFg1AW6CsQCjJsCcAyGCkYMFGDWBRnIO74ZVE%2BDvc9CHWRNgzoEQwQtvDMCqCfCJN0/h3fc8A4A2dkgZ9AzQxhNvrCZDTxOsmgATUoSIFpYVNld3TTzxpgnY9A9vB0tZBmDVBJhzIERw%2B5w%2BzJoAS1kGYNUEeMmeBRg1AeYcCBGsVtzMpB0rnQ8W5xW4eg%2BrJtDIPgf1yytvl%2BW7aBU8pgcvYQwt5Bx0PcO1WzjAe4mTizBqAsw5%2BoQizxCQXHoYBP/T4d7TO8/g6eYf1OeZIHjhrZf0xTN4RP5BfZ6lRSM/waCyf7hrXZi0Y2VxXgGzJsBSVjHuzRgm7VgJXIIbT%2BhGMCFVFe8qZbWQc6hJX8IG7xnO/mGZd5X2PEsLVisqIfYJifhBfaqlRAubYF6HVPhh0QqYcyig12uKOFRInsTyo7Je6uRJMHJ4nB494zHMGUIjN/t46PKK/O2T4ryC3lyPFcOeIbRQrXjuwpvMM5PKEIcjPa1K1GfbUTDn6CukMkShZ7CIjuOAWfEK5FhdTh/qs%2B0sWlhWPHdhReaZxbZ3XmJkxwzqs%2B0oXMKSjYrmS02u/PNF2io44sLSkrmnTM%2BoPzSi9zp5DLzwxgZMWgETUrfhHCS8MQkVo4WcQ01c71vw3iD%2BVw71h0fRnmdpwcjhZpR6Bsvo6BdM3lbLuveejOK8AvrzTBCmI0dizmbaKkjjLv8ozitgdozAfM7BaPAAd/jH4zNQn2EXOQd9HVxJYu6WvhvSQ/TFP/j3JuZuoT7DLkRHf2XrSYblbnWfQd1M7/yDf9ew3K3U57YHScxh96sppuyT5bRVcIXM8kRwJpY9XoBjOW47U7aDaRcBGU/ZD8vzArfg4RK9wYURKjBdyiJ0wXtIESIauYcU8QQYORAimHMgRPBmH4SIRn6fA/EEmHMgRLBaQYhg5ECIYLWCEEHnQIhgKYsQofDb5zqOm5YcuWBi7JhYS4jJz2a31TW2ld1sOFpadaC4wmqz8918ffTZGfGzU6OGR4YE%2BhtbH3ZW1TafuHDr08LLtY2t4hPOS4vJXz6Ff110rmrFhkKhae%2BbC0ZGmwHgrR3Fu4vKTqz/iTnQz7V62W/tjw0PEk7I09FprW1sKy2v/ceh8xcr7zm/a1xC2M7X5wp/zn/ji/JbjUrH/t8PFstR75KUAp5A7YTUHOi3fuWU8YlhomP6qDCfqLDA2eOijp6tut/aAQDRgwILVk2PDQ8SOgX6G0dGm0dGm3Nmjnht2/EjZ26IzvBkCFPHRo5LCDtztdbpkznZI5XoaTToIywBEZaA2alRue8ePldR59AhOzNe/OeijIT39px26NPj2HutnodQtZTtZ9Rve3Vm0tAQAGhu68j/rORIyY2W9kdDzAFJQ82LMuPtAMBBoL9x26uzIiwBAHDlZsMfPzl54Xp92AD/l7OT56fF%2Bvsa1q2YnPfe4ZJyZw8AAPjtc%2BOW/PnfXX8Io%2BMAOMhYvUfo9tri1BfmjASA8urG%2BW/sE59B7JRjV3zaabWNirZ8/MqMoP6%2BRoP%2BhTkjXtn8tcO4nkmNFh9ZOCk2f%2B8ZIQrKHLtM9VQzmaqRI2dGEj87Nrt9xYajwve7ouZ%2BRc39L099DwAA3POzR/KeYbXZV3x4tLq%2BBQCq6h787m8n4sKDk4aGGPS61386/rm3D0p%2BSkp86PTkoUdLnb%2BIHPlPF5PAWW1w7trdIyVVP/5hPABEDjQ59J/1g%2BgAPx8AOHetzuRnjA0PsgT5ZY4a8vW3t5SOXbl6HkSn5v3MWeldv2hw/Hx1ydVaUrd5E6L5boVnK2vqW4Tjdrt9Z%2BFlvml0jCXCEuAQYW83tN6%2B1wIAqxel6LlumbbzpwC5VbrpcUN9U7tD/0UZXePaX3zty5O8mSE7I74XY5ejnmqi3hNvRh9D/OBgfrRnrtaSuvkaDVFhgXy3q7eaHFqviLK84ZEhT5oAAKCj07px3zkASBgSvDA9rlshJvFZ4KpV1KTX68bGDZyZEskf2HuiXNxzkDkgLWkQAFht9kOnKw90xQCYnhwR2N9X0dgVqKeKqLfPYfL3EV43tXSQuvHxmedec7tDa73oSIDohAL7iq9VVDcBwEtZY40Gfa%2B1FSjd/LPzH%2BfsXjM3qL/vnYbWP2wv/upMpbjDs5NidBwHAMfPV99rbr9598HZijoAMBr0QgiUOXbWUO%2BJt%2BbWTuFTA/2NpG4P2p50CzH1c2g1m55Ueg9aO53DsNUG6z4vBYDwkP5Lpg0TNbkO3q7jehcGg66lvdOhp7BeHDj5PX/kwOOVJSsjXtHYlainhqgXOTo6reXVjfzr1MRQUreHj6w37jTzr%2BOHBDu0JoiOlN1skDxDYWkV/91dPm9U/3593chJ/vWuiS/v2XXsCgCYTf3eX5Y5OtostKbEDYx%2BvAi%2Bvyzz0racS9ty3vz5BP7ImBhzXHgQyB47a6j6lP0XxV1fqcxRg1PiQ0ndDp6%2BwXebkRwxyNxfOM7puJwZw/mm767X36xvccwPoKtn/mdnAWBAgK9gOQAgZhXgpIMYjmtqffTO7tN8uqPXcWuWjBd6ZmX08KNhWRlxisYuSz3t5RwAsLOw7HJVAwDoOG7rS1MXT44PMfn6%2BuijQk1zU6P%2Bvnq6yc8HALZ/dYkvXw163ZZV05LjLD4GXYQl4C%2B/TE8aOgAArDb7u3tKXHzQmfK6IlEZ2XesNvtH%2B7/jXyfHWdJHhAOAr49%2B7vgo/mD2nw4mLd0pyPP5/%2BGPL5wYo9dx8sfOFKpun7c/si7dcGzdsszUxFCTv3Ftbtra3LRuPTgOAO63dixdf7Rg1dSoUNOwiOBdv58j7tL2sHPN9mKpPdBufPB56eTRg3UOYaAPHDlbWVHdFDc4CABWzh/1v4s1M1MieYvWNbXxhhcoKa9re9jp52sIDfZLHxH%2BzflqmWNnCrUvvN293/6L/MJpY4csSIseE2MOMfWz2ex1TW1lNxuPfXur9WEnr8%2B1O81Zaw8uyoyblRI5LCI40N/Y1tFZVfvgxMWanceu3G5o7aa21Our1U0HTl5/dlLMk%2BOO6wU4v0v6hBwHAHaALQcv/PVX6QAwLiE0bfigrPRYvsvxCzUOZ3hktZ8quzN1zBAAyE6P/eZCjfyx96yeWnDDl%2B6k8sEI%2Bxg4QtmGIHgPKUIE7yFFiOBtgggRjBwIEcw5ECIYORAimHMgRPDRBIQIRg6ECDoHQsTA4bKCEMDIgRDBUhYhgpEDIYKlLEIEIwdCBHMOhAheeEOIYORAiGDOgRD5P1LRtfBwh%2BRqAAAAAElFTkSuQmCC%22,%20%22sizes%22:%20%22180x180%22,%20%22type%22:%20%22image/png%22}]}">
+<title>Contractgenerator Incidentele Waarneming huisarts – LHV Modelovereenkomst v4.5 (Belastingdienst 905-2021-82676-2-0)</title>
+<style>
+  :root {
+    --blue-900: #1a365d; --blue-700: #2b6cb0; --blue-500: #3182ce; --blue-100: #ebf4ff;
+    --gray-50: #f7fafc; --gray-100: #edf2f7; --gray-200: #e2e8f0; --gray-300: #cbd5e0;
+    --gray-500: #718096; --gray-600: #4a5568; --gray-800: #2d3748; --gray-900: #1a202c;
+    --green-500: #38a169; --green-400: #68d391;
+    --amber-50: #fffbeb; --amber-200: #fde68a; --amber-600: #d97706; --amber-700: #b45309;
+    --red-50: #fef2f2; --red-200: #fecaca; --red-600: #dc2626; --red-700: #b91c1c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', -apple-system, system-ui, sans-serif; background: #f0f4f8; color: var(--gray-800); }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 12px 60px; }
+  .header { background: linear-gradient(135deg, var(--blue-900), var(--blue-700)); border-radius: 0 0 16px 16px; padding: 24px 20px 18px; color: #fff; margin-bottom: 20px; }
+  .header-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 4px; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header-version { font-size: 11px; opacity: 0.6; margin-top: 2px; }
+  .progress-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .progress-bar { flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.2); }
+  .progress-fill { height: 6px; border-radius: 3px; background: var(--green-400); transition: width 0.4s; }
+  .progress-label { font-size: 12px; opacity: 0.9; }
+  .tabs { display: flex; margin-bottom: 16px; border-radius: 8px; overflow: hidden; border: 1px solid var(--gray-200); }
+  .tab { flex: 1; padding: 10px 16px; border: none; cursor: pointer; font-weight: 600; font-size: 13px; font-family: inherit; transition: all 0.2s; }
+  .tab.active { background: var(--blue-700); color: #fff; }
+  .tab:not(.active) { background: var(--gray-50); color: var(--gray-600); }
+  .section { margin-bottom: 20px; background: #fff; border-radius: 10px; border: 1px solid var(--gray-200); overflow: hidden; }
+  .section-head { padding: 12px 16px; background: linear-gradient(135deg, var(--blue-100), #f0f7ff); border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 8px; }
+  .section-head h3 { font-size: 15px; font-weight: 700; color: var(--blue-900); }
+  .section-body { padding: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .field { min-width: 200px; } .field.half { flex: 1 1 48%; } .field.full { flex: 1 1 100%; } .field.small { min-width: 100px; }
+  .field label { display: block; font-size: 11px; font-weight: 600; color: var(--gray-600); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .field input, .field textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--gray-300); border-radius: 6px; font-size: 14px; font-family: inherit; background: var(--gray-50); outline: none; transition: border-color 0.2s; }
+  .field input:focus, .field textarea:focus { border-color: var(--blue-700); }
+  .field textarea { min-height: 70px; resize: vertical; font-size: 13px; }
+  .toggle { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; width: 100%; }
+  .toggle-track { width: 40px; height: 22px; border-radius: 11px; cursor: pointer; flex-shrink: 0; margin-top: 1px; position: relative; transition: background 0.2s; background: var(--gray-300); }
+  .toggle-track.on { background: var(--blue-700); }
+  .toggle-thumb { width: 18px; height: 18px; border-radius: 9px; background: #fff; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  .toggle-track.on .toggle-thumb { left: 20px; }
+  .toggle-label { font-size: 14px; font-weight: 600; color: var(--gray-800); }
+  .toggle-desc { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
+  .radio-group { margin-top: 8px; margin-left: 50px; display: flex; flex-direction: column; gap: 8px; }
+  .radio-opt { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--gray-200); transition: all 0.2s; }
+  .radio-opt.selected { background: var(--blue-100); border-color: var(--blue-700); }
+  .radio-dot { width: 16px; height: 16px; border-radius: 8px; border: 2px solid #a0aec0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .radio-opt.selected .radio-dot { border-color: var(--blue-700); }
+  .radio-inner { width: 8px; height: 8px; border-radius: 4px; background: var(--blue-700); display: none; }
+  .radio-opt.selected .radio-inner { display: block; }
+  .radio-opt span { font-size: 13px; color: var(--gray-800); }
+  .alert { padding: 12px 14px; border-radius: 8px; font-size: 13px; line-height: 1.5; margin: 8px 0; display: none; }
+  .alert b { display: block; margin-bottom: 2px; }
+  .alert-amber { background: var(--amber-50); border: 1px solid var(--amber-200); color: var(--amber-700); }
+  .alert-red { background: var(--red-50); border: 1px solid var(--red-200); color: var(--red-700); }
+  .alert a { color: inherit; font-weight: 600; }
+  .checklist { margin-bottom: 16px; background: #fff; border-radius: 10px; border: 1px solid var(--gray-200); overflow: hidden; }
+  .checklist-head { padding: 12px 16px; background: linear-gradient(135deg, var(--amber-50), #fffef5); border-bottom: 1px solid var(--amber-200); display: flex; align-items: center; gap: 8px; }
+  .checklist-head h3 { font-size: 15px; font-weight: 700; color: var(--amber-700); }
+  .checklist-body { padding: 16px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--gray-100); }
+  .check-item:last-child { border-bottom: none; }
+  .check-box { width: 20px; height: 20px; border-radius: 4px; border: 2px solid var(--gray-300); cursor: pointer; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .check-box.checked { background: var(--green-500); border-color: var(--green-500); }
+  .check-box svg { display: none; } .check-box.checked svg { display: block; }
+  .check-text { font-size: 13px; color: var(--gray-800); }
+  .download-btn { width: 100%; padding: 14px 20px; border: none; border-radius: 10px; background: linear-gradient(135deg, var(--blue-700), var(--blue-500)); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(43,108,176,0.3); transition: transform 0.1s, box-shadow 0.1s, opacity 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .download-btn:hover { box-shadow: 0 6px 16px rgba(43,108,176,0.4); }
+  .download-btn:active { transform: scale(0.98); }
+  .download-btn.complete { background: linear-gradient(135deg, #276749, #2f855a); }
+  .download-btn.blocked { opacity: 0.5; cursor: not-allowed; pointer-events: none; box-shadow: none; transform: none; }
+  .download-hint { font-size: 11px; color: #a0aec0; text-align: center; margin-top: 10px; }
+  .preview { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px; font-size: 12px; line-height: 1.6; font-family: Georgia, serif; }
+  .preview h2 { font-size: 16px; margin: 0 0 4px; } .preview p { margin: 4px 0; }
+  .preview hr { border: none; border-top: 1px solid #eee; margin: 12px 0; }
+  .preview .sig-row { display: flex; gap: 40px; margin-top: 20px; } .preview .sig-col { flex: 1; }
+  .preview .sig-line { border-bottom: 1px solid #333; margin-top: 40px; width: 80%; }
+  .preview .hint { font-size: 10px; color: #999; margin-top: 20px; text-align: center; }
+  .preview .sub { font-size: 10px; color: #888; margin-top: 4px; }
+  .anw-details-wrap { margin-left: 50px; margin-top: 4px; width: calc(100% - 50px); }
+  /* Button row for download + share */
+  .btn-row { display: flex; gap: 10px; margin-bottom: 4px; }
+  .share-btn { width: 100%; padding: 14px 20px; border: none; border-radius: 10px; background: linear-gradient(135deg, #276749, #2f855a); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(39,103,73,0.3); transition: transform 0.1s, box-shadow 0.1s, opacity 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .share-btn:hover { box-shadow: 0 6px 16px rgba(39,103,73,0.4); }
+  .share-btn:active { transform: scale(0.98); }
+  .share-btn.blocked { opacity: 0.5; cursor: not-allowed; pointer-events: none; box-shadow: none; }
+  .share-btn.hidden { display: none; }
+  /* iOS: prevent zoom on input focus — needs ≥16px font */
+  @supports (-webkit-touch-callout: none) {
+    .field input, .field textarea { font-size: 16px; }
+  }
+  @media (max-width: 600px) {
+    .field.half { flex: 1 1 100%; }
+    .radio-group { margin-left: 0; }
+    .anw-details-wrap { margin-left: 0; width: 100%; }
+    /* Larger touch targets */
+    .toggle-track { width: 48px; height: 28px; border-radius: 14px; }
+    .toggle-thumb { width: 22px; height: 22px; border-radius: 11px; top: 3px; left: 3px; }
+    .toggle-track.on .toggle-thumb { left: 23px; }
+    .check-box { width: 28px; height: 28px; border-radius: 6px; min-width: 28px; }
+    .check-box svg { width: 18px; height: 18px; }
+    .check-item { gap: 12px; padding: 10px 0; }
+    .check-text { font-size: 14px; }
+    /* Inputs */
+    .field input, .field textarea { padding: 12px; font-size: 16px; border-radius: 8px; }
+    .field label { font-size: 12px; margin-bottom: 4px; }
+    /* Sections */
+    .section-body { padding: 14px; gap: 14px; }
+    .section-head { padding: 14px 16px; }
+    /* Buttons stacked on mobile */
+    .btn-row { flex-direction: column; gap: 8px; }
+    .download-btn, .share-btn { padding: 16px 20px; font-size: 16px; border-radius: 12px; }
+    /* Tabs */
+    .tab { padding: 12px 16px; font-size: 14px; }
+    /* Header */
+    .header h1 { font-size: 18px; }
+    .header { padding: 20px 16px 16px; }
+    /* Preview */
+    .preview { padding: 16px; }
+    /* Alerts */
+    .alert { font-size: 14px; padding: 14px; }
+    .mini-btn-row { gap:8px; }
+    .mini-btn { padding:10px 12px; font-size:14px; border-radius:8px; }
+    .mini-help { font-size:13px; }
+    /* Toggle labels */
+    .toggle-label { font-size: 15px; }
+    .toggle { gap: 12px; padding: 8px 0; }
+  }
+
+  .mini-btn-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .mini-btn {
+    padding:8px 12px; border:1px solid var(--gray-300); border-radius:6px;
+    background:#fff; color:var(--gray-700); cursor:pointer; font-size:13px;
+    font-family:inherit; line-height:1.2;
+  }
+  .mini-btn:hover { border-color: var(--blue-700); color: var(--blue-700); }
+  .mini-help { font-size:12px; color:var(--gray-500); margin-top:6px; line-height:1.4; }
+
+  /* Safe area for notched iPhones */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .wrap { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="header-sub">LHV Modelovereenkomst &middot; Belastingdienst nr. 905-2021-82676-2-0</div>
+    <h1>Contractgenerator Incidentele Waarneming</h1>
+    <div class="header-version">v4.5 &mdash; praktijken-bibliotheek, mobiel-geoptimaliseerd, iOS Share Sheet, echte .docx-export</div>
+    <div class="progress-row">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <span class="progress-label" id="progressLabel">0% ingevuld</span>
+    </div>
+    <div style="font-size:10px;opacity:0.6;margin-top:8px">🔒 Ingevulde formuliergegevens blijven lokaal op dit apparaat. Deze tool verstuurt geen ingevulde contractgegevens naar een server.</div>
+  </div>
+  <div id="installBanner" style="display:none;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.5;margin-bottom:16px;background:linear-gradient(135deg,#ebf4ff,#f0f7ff);border:1px solid #bee3f8;color:#1a365d">
+    <div style="display:flex;align-items:flex-start;gap:10px">
+      <span style="font-size:24px;flex-shrink:0">📲</span>
+      <div><b>Tip: zet deze tool op je beginscherm</b><br>Tik op <span style="font-size:16px">⎙</span> (delen) → <b>"Zet op beginscherm"</b> voor snelle toegang als app.
+      <div style="margin-top:6px"><button onclick="document.getElementById('installBanner').style.display='none';localStorage.setItem('installDismissed','1')" style="background:none;border:1px solid #93c5fd;border-radius:6px;padding:4px 12px;font-size:12px;color:#1a365d;cursor:pointer;font-family:inherit">Begrepen, niet meer tonen</button></div></div>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" id="tabForm" onclick="showTab('form')">Invulformulier</button>
+    <button class="tab" id="tabPreview" onclick="showTab('preview')">Contractpreview</button>
+  </div>
+  <div id="formPanel">
+    <div class="section"><div class="section-head"><span style="font-size:18px">🏥</span><h3>Opdrachtgever (praktijkhouder)</h3></div>
+      <div class="section-body">
+        <div class="field full" id="clientPickerWrap" style="display:none">
+          <label>Opgeslagen praktijken</label>
+          <div style="display:flex;gap:6px;align-items:stretch">
+            <select id="clientPicker" onchange="selectClient(this.value)" style="flex:1;padding:8px 10px;border:1px solid var(--gray-300);border-radius:6px;font-size:14px;font-family:inherit;background:var(--gray-50);outline:none">
+              <option value="">— Kies een praktijk —</option>
+            </select>
+            <button type="button" onclick="deleteCurrentClient()" id="clientDeleteBtn" style="padding:8px 12px;border:1px solid var(--gray-300);border-radius:6px;background:#fff;cursor:pointer;font-size:13px;font-family:inherit;display:none" title="Verwijder geselecteerde praktijk">🗑️</button>
+          </div>
+        </div>
+        <div class="field full"><label>Naam huisarts</label><input id="ogNaam" placeholder="Dr. J. de Vries" oninput="update()"></div>
+        <div class="field half"><label>KvK-nummer</label><input id="ogKvk" placeholder="12345678" oninput="update()"></div>
+        <div class="field half"><label>Praktijkadres</label><input id="ogAdres" placeholder="Voorstraat 1, 2611 AA Delft" oninput="update()"></div>
+        <div class="field full">
+          <button type="button" onclick="saveCurrentClient()" id="clientSaveBtn" style="width:100%;padding:10px;border:1px solid var(--blue-700);border-radius:6px;background:#fff;color:var(--blue-700);cursor:pointer;font-size:13px;font-family:inherit;font-weight:600">💾 Bewaar deze praktijk</button>
+        </div>
+      </div></div>
+    <div class="section"><div class="section-head"><span style="font-size:18px">👩‍⚕️</span><h3>Opdrachtnemer (waarnemer)</h3></div>
+      <div class="section-body">
+        <div class="field full"><label>Naam waarnemer</label><input id="onNaam" placeholder="Dr. A.B. Jansen" oninput="update()"></div>
+        <div class="field half"><label>KvK-nummer</label><input id="onKvk" placeholder="87654321" oninput="update()"></div>
+        <div class="field half"><label>Adres</label><input id="onAdres" placeholder="Kerkweg 12, 2511 AB Den Haag" oninput="update()"></div>
+        <div class="field full">
+          <div class="toggle"><div class="toggle-track" id="rememberToggle" onclick="toggleRemember()"><div class="toggle-thumb"></div></div>
+            <div><div class="toggle-label">Onthoud mijn gegevens</div><div class="toggle-desc">Slaat waarnemer-info en standaardtarief lokaal op dit apparaat op (verdwijnt bij wissen van browsergegevens)</div></div></div>
+        </div>
+      </div></div>
+    <div class="section"><div class="section-head"><span style="font-size:18px">📅</span><h3>Waarneming</h3></div>
+      <div class="section-body">
+        <div class="field full"><label>Datum / data waarneming (vrije tekst voor in contract)</label><input id="waarnDatum" placeholder="15 april 2026 (of: 15, 16 en 17 april 2026)" oninput="update()"></div>
+        <div class="field half small"><label>Startdatum (voor duurcheck)</label><input type="date" id="waarnStart" oninput="update()"></div>
+        <div class="field half small"><label>Einddatum (voor duurcheck)</label><input type="date" id="waarnEind" oninput="update()"></div>
+        <div class="alert alert-red" id="alertDuurInvalid"><b>&#128683; Einddatum ligt v&oacute;&oacute;r startdatum</b>Controleer de ingevoerde data.</div>
+        <div class="alert alert-amber" id="alertDuur"><b>&#9888;&#65039; Let op: mogelijk geen incidentele waarneming meer</b>De ingevoerde periode is langer dan 7 aaneengesloten dagen. Volgens de LHV-richtlijn valt dit mogelijk onder <b>duurwaarneming</b>.<br><a href="https://www.lhv.nl/product/lhv-contractgenerator/" target="_blank">&rarr; LHV Contractgenerator (duurwaarneming)</a><br><div class="check-item" style="margin-top:8px;border:none;padding:4px 0"><div class="check-box" id="chk5" onclick="toggleCheck('chk5')" style="border-color:var(--amber-600)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-text" style="color:var(--amber-700)">Ik begrijp dat dit waarschijnlijk duurwaarneming is en gebruik dit contract <b>alleen na bewuste afweging</b>.</div></div></div>
+        <div class="alert alert-red" id="alertDuurHard"><b>&#128683; Dit valt niet onder incidentele waarneming</b>De ingevoerde periode is langer dan 30 dagen. Dit contract is hier niet voor bedoeld. Overweeg duurwaarneming of praktijkmedewerking.<br><a href="https://www.lhv.nl/product/lhv-contractgenerator/" target="_blank">&rarr; LHV Contractgenerator</a></div>
+        <div class="alert alert-amber" id="alertNoDates" style="display:none"><b>&#9888;&#65039; Duurcontrole niet mogelijk</b>De duurcontrole werkt alleen als zowel startdatum als einddatum zijn ingevuld. Vul beide in om te controleren of de waarneming binnen het incidentele model past.</div>
+        <div class="field full"><div class="mini-help">Datumweergave volgt het apparaat of de browser van de gebruiker.</div></div>
+        <div class="field half small"><label>Van (uur)</label><input type="time" id="waarnVan" value="08:00" step="900" oninput="update()"></div>
+        <div class="field half small"><label>Tot (uur)</label><input type="time" id="waarnTot" value="17:00" step="900" oninput="update()"></div>
+        <div class="field full">
+          <div class="mini-btn-row">
+            <button type="button" class="mini-btn" onclick="setWaarnTimes('08:00','17:00')">Hele dag</button>
+            <button type="button" class="mini-btn" onclick="setWaarnTimes('08:00','12:30')">Ochtend</button>
+            <button type="button" class="mini-btn" onclick="setWaarnTimes('13:00','17:00')">Middag</button>
+                      </div>
+        </div>
+        <div class="field full">
+          <div style="padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.5;margin:8px 0;background:var(--blue-100);border:1px solid #bee3f8;color:var(--blue-900)">
+            <b>&#8505;&#65039; ANW-diensten?</b> Voor avond-, nacht- en weekenddiensten heeft de LHV een apart contracttype. ANW-afspraken horen niet in een incidentele waarneemovereenkomst.<br>
+            <a href="https://www.lhv.nl/product/lhv-contractgenerator/" target="_blank" style="color:var(--blue-700);font-weight:600">&rarr; Open de LHV Contractgenerator voor ANW-diensten</a>
+          </div>
+        </div>
+      </div></div>
+    <div class="section"><div class="section-head"><span style="font-size:18px">💶</span><h3>Honorering</h3></div>
+      <div class="section-body">
+        <div class="field half"><label>Uurtarief (&euro;)</label><input id="uurtarief" placeholder="85,00" oninput="update()"></div>
+        <div class="field half" style="visibility:hidden"></div>
+        <div class="field full"><div class="toggle"><div class="toggle-track" id="reisWWToggle" onclick="toggleReisWW()"><div class="toggle-thumb"></div></div><div><div class="toggle-label">Woon-werkverkeer vergoeding</div></div></div>
+          <div id="reisWWDetail" style="display:none;margin-left:50px;margin-top:4px"><div class="field small"><label>Bedrag (&euro;)</label><input id="reisWWBedrag" placeholder="25,00" oninput="update()"></div></div></div>
+        <div class="field full"><div class="toggle"><div class="toggle-track" id="kmToggle" onclick="toggleKm()"><div class="toggle-thumb"></div></div><div><div class="toggle-label">Kilometervergoeding</div></div></div>
+          <div id="kmDetail" style="display:none;margin-left:50px;margin-top:4px"><div class="field small"><label>Per km (&euro;)</label><input id="kmBedrag" placeholder="0,23 (fiscale norm 2026)" oninput="update()"></div></div></div>
+        <div class="field half small"><label>Factuurtermijn (dagen)</label><input id="factuurTermijn" value="14" oninput="update()"></div>
+        <div class="field half small"><label>Betalingstermijn (dagen)</label><input id="betaalTermijn" value="30" oninput="update()"></div>
+      </div></div>
+    <div class="section"><div class="section-head"><span style="font-size:18px">⚙️</span><h3>Optionele bepalingen</h3></div>
+      <div class="section-body"><div class="field full"><div class="toggle"><div class="toggle-track on" id="verzToggle" onclick="toggleVerz()"><div class="toggle-thumb"></div></div><div><div class="toggle-label">Kopie beroepsaansprakelijkheidsverzekering</div><div class="toggle-desc">Waarnemer levert kopie polis + premiebewijs v&oacute;&oacute;r aanvang</div></div></div></div></div></div>
+    <div class="section"><div class="section-head"><span style="font-size:18px">✍️</span><h3>Ondertekening</h3></div>
+      <div class="section-body">
+        <div class="field half"><label>Plaats</label><input id="ondertekenPlaats" placeholder="Delft" oninput="update()"></div>
+        <div class="field half"><label>Datum</label><input type="date" id="ondertekenDatum" oninput="update()"></div>
+        <div class="field full">
+          <div class="mini-btn-row">
+            <button type="button" class="mini-btn" onclick="setTodayDate()">Vandaag</button>
+            <button type="button" class="mini-btn" onclick="useRememberedPlace()">Gebruik onthouden plaats</button>
+          </div>
+          <div class="mini-help">Datum wordt standaard op vandaag gezet. De plaats kun je handmatig aanpassen of opnieuw vullen met de onthouden standaardplaats.</div>
+        </div>
+      </div></div>
+    <div class="checklist"><div class="checklist-head"><span style="font-size:18px">✅</span><h3>Pre-download checklist</h3></div>
+      <div class="checklist-body">
+        <div class="check-item"><div class="check-box" id="chk1" onclick="toggleCheck('chk1')"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-text">De waarneming betreft in beginsel <b>enkele dagen / kortdurende inzet</b>; bij meer dan 7 dagen is bewust beoordeeld dat dit nog past binnen incidentele waarneming.</div></div>
+        <div class="check-item"><div class="check-box" id="chk2" onclick="toggleCheck('chk2')"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-text">Er worden <b>geen werknemerachtige afspraken</b> gemaakt buiten dit contract (geen vakantiedagen, vaste werktijden, gezagsverhouding).</div></div>
+        <div class="check-item"><div class="check-box" id="chk3" onclick="toggleCheck('chk3')"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-text">De gemarkeerde (gele) bepalingen zijn <b>ongewijzigd overgenomen</b> uit de Belastingdienst-beoordeelde modelovereenkomst.</div></div>
+        <div class="check-item"><div class="check-box" id="chk4" onclick="toggleCheck('chk4')"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-text">Partijen zullen in de praktijk <b>feitelijk werken</b> volgens de afspraken in deze overeenkomst.</div></div>
+        <div id="checklistWarning" class="alert alert-amber" style="margin-top:8px;display:block"><b>Vink alle punten af voordat je het contract downloadt.</b></div>
+      </div></div>
+    <div style="padding:10px 14px;border-radius:8px;font-size:14px;line-height:1.5;margin-bottom:12px;background:#f7fafc;border:1px solid var(--gray-200);color:var(--gray-600)"><b>Disclaimer:</b> Deze tool genereert een contracttekst op basis van de LHV-modelovereenkomst. De tool beoordeelt niet zelfstandig of de feitelijke arbeidsrelatie kwalificeert als overeenkomst van opdracht (DBA-proof). Bij twijfel: raadpleeg een juridisch of fiscaal adviseur.</div>
+    <div class="btn-row">
+      <button class="share-btn blocked hidden" id="shareBtn" onclick="shareContract()"><span style="font-size:18px">📤</span> Genereer &amp; Deel</button>
+      <button class="download-btn blocked" id="downloadBtn" onclick="downloadContract()"><span style="font-size:18px">📄</span> Download Contract (.docx)</button>
+    </div>
+    <div class="download-hint">Het gegenereerde contract wordt als echte .docx gemaakt. Via "Deel" kun je het direct mailen vanaf je telefoon.</div>
+    <div style="margin-top:24px;text-align:center">
+      <button onclick="wipeAllData()" style="background:none;border:1px solid var(--gray-300);border-radius:6px;padding:8px 16px;font-size:12px;color:var(--gray-600);cursor:pointer;font-family:inherit">🗑️ Wis alle opgeslagen gegevens</button>
+    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--gray-200);text-align:center;font-size:11px;color:var(--gray-500);line-height:1.6">
+      Laatste update: 16 april 2026 &middot; <a href="https://github.com/nickphysix/Huisarts-contract-generator" target="_blank" style="color:var(--gray-500)">Open source op GitHub</a><br>
+      Gebaseerd op LHV-modelovereenkomst incidentele waarneming (Belastingdienst nr. 905-2021-82676-2-0)
+    </div>
+  </div>
+  <div id="previewPanel" style="display:none"></div>
+</div>
+<script>
+var state={reisWW:false,km:false,verz:true,checks:{chk1:false,chk2:false,chk3:false,chk4:false,chk5:false},duurBlocked:false,duurWarn:false,remember:false};
+function v(id){return document.getElementById(id).value.trim();}
+function or(val,ph){return val||'['+ph+']';}
+function parseFlexibleDate(val){
+  if(!val) return null;
+  val = String(val).trim();
+  var m;
+  if((m = val.match(/^(\d{4})-(\d{2})-(\d{2})$/))){
+    var y = parseInt(m[1],10), mo = parseInt(m[2],10)-1, d = parseInt(m[3],10);
+    var dt = new Date(y, mo, d);
+    if(dt && dt.getFullYear()===y && dt.getMonth()===mo && dt.getDate()===d) return dt;
+    return null;
+  }
+  if((m = val.match(/^(\d{2})\/(\d{2})\/(\d{4})$/))){
+    var d2 = parseInt(m[1],10), mo2 = parseInt(m[2],10)-1, y2 = parseInt(m[3],10);
+    var dt2 = new Date(y2, mo2, d2);
+    if(dt2 && dt2.getFullYear()===y2 && dt2.getMonth()===mo2 && dt2.getDate()===d2) return dt2;
+    return null;
+  }
+  return null;
+}
+function formatDateISO(dt){
+  if(!dt) return '';
+  return dt.toISOString().slice(0,10);
+}
+function formatDutchDate(val){
+  if(!val) return '';
+  var dt = parseFlexibleDate(val);
+  if(dt){
+    var months=['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+    return dt.getDate()+' '+months[dt.getMonth()]+' '+dt.getFullYear();
+  }
+  return val;
+}
+function setWaarnTimes(van,tot){
+  document.getElementById('waarnVan').value=van;
+  document.getElementById('waarnTot').value=tot;
+  update();
+}
+function setTodayDate(){
+  document.getElementById('ondertekenDatum').value=formatDateISO(new Date());
+  update();
+}
+function useRememberedPlace(){
+  try{
+    var raw=localStorage.getItem(REMEMBER_KEY);
+    if(!raw) return;
+    var data=JSON.parse(raw);
+    if(data.ondertekenPlaats){
+      document.getElementById('ondertekenPlaats').value=data.ondertekenPlaats;
+      update();
+    }
+  }catch(e){}
+}
+// --- Remember (localStorage) ---
+var REMEMBER_KEY='cg_remembered';
+var REMEMBER_FIELDS=['onNaam','onKvk','onAdres','uurtarief','ondertekenPlaats'];
+function toggleRemember(){
+  state.remember=!state.remember;
+  document.getElementById('rememberToggle').classList.toggle('on',state.remember);
+  if(state.remember){saveRemembered();}
+  else{try{localStorage.removeItem(REMEMBER_KEY);}catch(e){}}
+}
+function saveRemembered(){
+  if(!state.remember)return;
+  try{
+    var data={};
+    REMEMBER_FIELDS.forEach(function(id){data[id]=v(id);});
+    localStorage.setItem(REMEMBER_KEY,JSON.stringify(data));
+  }catch(e){}
+}
+function loadRemembered(){
+  try{
+    var raw=localStorage.getItem(REMEMBER_KEY);
+    if(!raw)return;
+    var data=JSON.parse(raw);
+    REMEMBER_FIELDS.forEach(function(id){
+      if(data[id]){document.getElementById(id).value=data[id];}
+    });
+    state.remember=true;
+    document.getElementById('rememberToggle').classList.add('on');
+  }catch(e){}
+}
+// --- Client (opdrachtgever) library ---
+var CLIENTS_KEY='cg_clients';
+function loadClients(){
+  try{var raw=localStorage.getItem(CLIENTS_KEY);return raw?JSON.parse(raw):[];}catch(e){return [];}
+}
+function saveClients(clients){
+  try{localStorage.setItem(CLIENTS_KEY,JSON.stringify(clients));}catch(e){}
+}
+function refreshClientPicker(){
+  var clients=loadClients();
+  var wrap=document.getElementById('clientPickerWrap');
+  var picker=document.getElementById('clientPicker');
+  if(!picker||!wrap)return;
+  // Clear and rebuild options
+  picker.innerHTML='<option value="">— Kies een praktijk —</option>';
+  clients.forEach(function(c,idx){
+    var opt=document.createElement('option');
+    opt.value=idx;
+    opt.textContent=c.label||c.ogNaam||'Praktijk '+(idx+1);
+    picker.appendChild(opt);
+  });
+  wrap.style.display=clients.length>0?'block':'none';
+  document.getElementById('clientDeleteBtn').style.display='none';
+  picker.value='';
+}
+function selectClient(idx){
+  if(idx===''||idx===null){
+    document.getElementById('clientDeleteBtn').style.display='none';
+    return;
+  }
+  var clients=loadClients();
+  var c=clients[parseInt(idx,10)];
+  if(!c)return;
+  document.getElementById('ogNaam').value=c.ogNaam||'';
+  document.getElementById('ogKvk').value=c.ogKvk||'';
+  document.getElementById('ogAdres').value=c.ogAdres||'';
+  document.getElementById('clientDeleteBtn').style.display='block';
+  update();
+}
+function saveCurrentClient(){
+  var naam=v('ogNaam'),kvk=v('ogKvk'),adres=v('ogAdres');
+  if(!naam&&!kvk&&!adres){alert('Vul eerst de praktijkgegevens in om te bewaren.');return;}
+  var clients=loadClients();
+  // Check duplicate by ogNaam+ogKvk
+  var existingIdx=-1;
+  for(var i=0;i<clients.length;i++){
+    if(clients[i].ogNaam===naam&&clients[i].ogKvk===kvk){existingIdx=i;break;}
+  }
+  var entry={ogNaam:naam,ogKvk:kvk,ogAdres:adres,label:naam||adres||'Praktijk'};
+  if(existingIdx>=0){
+    if(!confirm('Deze praktijk is al opgeslagen. Bijwerken?'))return;
+    clients[existingIdx]=entry;
+  } else {
+    clients.push(entry);
+  }
+  // Sort alphabetically by label
+  clients.sort(function(a,b){return (a.label||'').localeCompare(b.label||'');});
+  saveClients(clients);
+  refreshClientPicker();
+  // Try to reselect this client
+  var newIdx=-1;
+  for(var j=0;j<clients.length;j++){
+    if(clients[j].ogNaam===naam&&clients[j].ogKvk===kvk){newIdx=j;break;}
+  }
+  if(newIdx>=0){
+    document.getElementById('clientPicker').value=newIdx;
+    document.getElementById('clientDeleteBtn').style.display='block';
+  }
+  alert(existingIdx>=0?'Praktijk bijgewerkt.':'Praktijk opgeslagen.');
+}
+function deleteCurrentClient(){
+  var picker=document.getElementById('clientPicker');
+  var idx=picker.value;
+  if(idx===''||idx===null)return;
+  var clients=loadClients();
+  var c=clients[parseInt(idx,10)];
+  if(!c)return;
+  if(!confirm('Praktijk "'+(c.label||'—')+'" verwijderen uit de lijst?'))return;
+  clients.splice(parseInt(idx,10),1);
+  saveClients(clients);
+  refreshClientPicker();
+}
+function wipeAllData(){
+  if(!confirm('Weet je zeker dat je alle opgeslagen gegevens wilt wissen? Dit verwijdert zowel de formuliervelden als de lokaal opgeslagen waarnemer-gegevens.'))return;
+  // Clear all inputs
+  var inputs=document.querySelectorAll('input[type="text"],input[type="date"],input:not([type]),textarea');
+  inputs.forEach(function(el){
+    if(el.id==='factuurTermijn')el.value='14';
+    else if(el.id==='betaalTermijn')el.value='30';
+    else el.value='';
+  });
+  // Clear localStorage
+  try{
+    localStorage.removeItem(REMEMBER_KEY);
+    localStorage.removeItem('installDismissed');
+    localStorage.removeItem(CLIENTS_KEY);
+  }catch(e){}
+  // Reset toggles
+  state.reisWW=false;state.km=false;state.remember=false;
+  ['reisWWToggle','kmToggle','rememberToggle'].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.classList.remove('on');
+  });
+  document.getElementById('reisWWDetail').style.display='none';
+  document.getElementById('kmDetail').style.display='none';
+  // Reset checkboxes
+  ['chk1','chk2','chk3','chk4','chk5'].forEach(function(id){
+    state.checks[id]=false;
+    var el=document.getElementById(id);if(el)el.classList.remove('checked');
+  });
+  update();
+  refreshClientPicker();
+  alert('Alle gegevens zijn gewist.');
+}
+function toggleReisWW(){state.reisWW=!state.reisWW;document.getElementById('reisWWToggle').classList.toggle('on',state.reisWW);document.getElementById('reisWWDetail').style.display=state.reisWW?'block':'none';update();}
+function toggleKm(){state.km=!state.km;document.getElementById('kmToggle').classList.toggle('on',state.km);document.getElementById('kmDetail').style.display=state.km?'block':'none';update();}
+function toggleVerz(){state.verz=!state.verz;document.getElementById('verzToggle').classList.toggle('on',state.verz);update();}
+function toggleCheck(id){state.checks[id]=!state.checks[id];document.getElementById(id).classList.toggle('checked',state.checks[id]);update();}
+function checkDuur(){var s=v('waarnStart'),e=v('waarnEind');state.duurBlocked=false;state.duurWarn=false;document.getElementById('alertDuur').style.display='none';document.getElementById('alertDuurHard').style.display='none';document.getElementById('alertDuurInvalid').style.display='none';var hasDatumText=v('waarnDatum')!=='';var hasOneDate=(s&&!e)||(!s&&e);var hasBothEmpty=!s&&!e;document.getElementById('alertNoDates').style.display=(hasDatumText&&(hasBothEmpty||hasOneDate))?'block':'none';if(!s||!e)return;document.getElementById('alertNoDates').style.display='none';var start=parseFlexibleDate(s),end=parseFlexibleDate(e);if(!start||!end){document.getElementById('alertNoDates').style.display='block';return;}if(end<start){document.getElementById('alertDuurInvalid').style.display='block';state.duurBlocked=true;return;}var days=Math.round((end-start)/(1000*60*60*24))+1;if(days>30){document.getElementById('alertDuurHard').style.display='block';state.duurBlocked=true;return;}if(days>7){document.getElementById('alertDuur').style.display='block';state.duurWarn=true;state.duurBlocked=!state.checks.chk5;}}
+function showTab(t){document.getElementById('formPanel').style.display=t==='form'?'block':'none';document.getElementById('previewPanel').style.display=t==='preview'?'block':'none';document.getElementById('tabForm').classList.toggle('active',t==='form');document.getElementById('tabPreview').classList.toggle('active',t==='preview');if(t==='preview')renderPreview();}
+function update(){var required=['ogNaam','ogKvk','ogAdres','onNaam','onKvk','onAdres','waarnDatum','waarnVan','waarnTot','uurtarief'];var filled=required.filter(function(id){return v(id)!=='';}).length;var pct=Math.round((filled/required.length)*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressLabel').textContent=pct+'% ingevuld';checkDuur();var allChecked=state.checks.chk1&&state.checks.chk2&&state.checks.chk3&&state.checks.chk4;var canDownload=allChecked&&!state.duurBlocked;document.getElementById('downloadBtn').classList.toggle('complete',pct===100&&canDownload);document.getElementById('downloadBtn').classList.toggle('blocked',!canDownload);document.getElementById('downloadBtn').disabled=!canDownload;var sb=document.getElementById('shareBtn');if(sb){sb.classList.toggle('blocked',!canDownload);sb.disabled=!canDownload;}document.getElementById('checklistWarning').style.display=allChecked?'none':'block';saveRemembered();}
+function renderPreview(){var reisText='';if(state.reisWW&&v('reisWWBedrag'))reisText+=' + &euro; '+v('reisWWBedrag')+' woon-werkverkeer';if(state.km&&v('kmBedrag'))reisText+=' + &euro; '+v('kmBedrag')+'/km';var verzText=state.verz?'<p><b>Art. 5.7:</b> Kopie beroepsaansprakelijkheidsverzekering vereist</p>':'';document.getElementById('previewPanel').innerHTML='<div class="preview"><div style="text-align:center;margin-bottom:16px"><h2>OVEREENKOMST VAN OPDRACHT VOOR INCIDENTELE WAARNEMING</h2><p class="sub">Belastingdienst nr. 905-2021-82676-2-0 | 30 september 2021</p></div><p><b>Partijen:</b></p><p>1. <b>'+or(v('ogNaam'),'Naam huisarts')+'</b>, huisarts, KvK: '+or(v('ogKvk'),'...')+', '+or(v('ogAdres'),'adres')+' &mdash; <i>opdrachtgever</i></p><p>2. <b>'+or(v('onNaam'),'Naam waarnemer')+'</b>, huisarts, KvK: '+or(v('onKvk'),'...')+', '+or(v('onAdres'),'adres')+' &mdash; <i>opdrachtnemer</i></p><hr><p style="background:#fffde7;padding:8px;border-radius:4px;font-size:11px"><b>Offici&euml;le verklaring:</b> Deze overeenkomst is gebaseerd op de door de Belastingdienst op 30 september 2021 onder nummer 905-2021-82676-2-0 beoordeelde overeenkomst. De in die beoordeling als zodanig gemarkeerde bepalingen zijn ongewijzigd in deze overeenkomst opgenomen.</p><hr><p><b>Art. 3 &mdash; Waarneming:</b> '+or(v('waarnDatum'),'datum')+', van '+or(v('waarnVan'),'...')+' tot '+or(v('waarnTot'),'...')+' uur</p><p><b>Art. 7 &mdash; Honorering:</b> &euro; '+or(v('uurtarief'),'...')+'/uur'+reisText+'</p><p>Factuurtermijn: '+or(v('factuurTermijn'),'...')+' dagen &middot; Betalingstermijn: '+or(v('betaalTermijn'),'...')+' dagen</p>'+verzText+'<hr><p>Ondertekend te <b>'+or(v('ondertekenPlaats'),'plaats')+'</b> op <b>'+or(formatDutchDate(v('ondertekenDatum')),'datum')+'</b></p><div class="sig-row"><div class="sig-col"><p><b>Opdrachtgever:</b></p><p>'+or(v('ogNaam'),'_______________')+'</p><div class="sig-line"></div></div><div class="sig-col"><p><b>Opdrachtnemer:</b></p><p>'+or(v('onNaam'),'_______________')+'</p><div class="sig-line"></div></div></div><p class="hint">Dit is een beknopte samenvatting. Controleer altijd het volledige gedownloade contract op juistheid en volledigheid v&oacute;&oacute;r ondertekening.</p></div>';}
+function xmlEscape(str){return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;').replace(/'/g,'&apos;');}
+function xmlText(str){
+  var esc=xmlEscape(str);
+  return '<w:t xml:space="preserve">'+esc+'</w:t>';
+}
+function runXml(text, opts){
+  opts=opts||{};
+  var rPr='';
+  if(opts.bold) rPr+='<w:b/>';
+  if(opts.italic) rPr+='<w:i/>';
+  if(opts.underline) rPr+='<w:u w:val="single"/>';
+  if(opts.highlight) rPr+='<w:highlight w:val="yellow"/>';
+  if(opts.size) rPr+='<w:sz w:val="'+opts.size+'"/><w:szCs w:val="'+opts.size+'"/>';
+  if(opts.color) rPr+='<w:color w:val="'+opts.color+'"/>';
+  var prefix = rPr ? '<w:rPr>'+rPr+'</w:rPr>' : '';
+  return '<w:r>'+prefix+xmlText(text)+'</w:r>';
+}
+function paragraphXml(runs, opts){
+  opts=opts||{};
+  var pPr='';
+  if(opts.align) pPr+='<w:jc w:val="'+opts.align+'"/>';
+  var spacing=[];
+  if(opts.before!=null) spacing.push('w:before="'+opts.before+'"');
+  if(opts.after!=null) spacing.push('w:after="'+opts.after+'"');
+  if(opts.line!=null) spacing.push('w:line="'+opts.line+'"');
+  if(opts.lineRule) spacing.push('w:lineRule="'+opts.lineRule+'"');
+  if(spacing.length) pPr+='<w:spacing '+spacing.join(' ')+'/>';
+  if(opts.keepNext) pPr+='<w:keepNext/>';
+  if(opts.keepLines) pPr+='<w:keepLines/>';
+  if(opts.indentLeft!=null || opts.hanging!=null){
+    var attrs=[];
+    if(opts.indentLeft!=null) attrs.push('w:left="'+opts.indentLeft+'"');
+    if(opts.hanging!=null) attrs.push('w:hanging="'+opts.hanging+'"');
+    pPr+='<w:ind '+attrs.join(' ')+'/>';
+  }
+  var pPrXml=pPr ? '<w:pPr>'+pPr+'</w:pPr>' : '';
+  return '<w:p>'+pPrXml+runs.join('')+'</w:p>';
+}
+function bulletLikeParagraph(text, opts){
+  opts=opts||{};
+  opts.indentLeft = opts.indentLeft!=null ? opts.indentLeft : 360;
+  opts.hanging = opts.hanging!=null ? opts.hanging : 360;
+  return paragraphXml([runXml('– ' + text, opts.runOpts||{})], opts);
+}
+function buildDocumentXml(){
+  var ogNaam=or(v('ogNaam'),'Naam huisarts');
+  var ogKvk=or(v('ogKvk'),'KvK-nummer');
+  var ogAdres=or(v('ogAdres'),'adres');
+  var onNaam=or(v('onNaam'),'Naam waarnemer');
+  var onKvk=or(v('onKvk'),'KvK-nummer');
+  var onAdres=or(v('onAdres'),'adres');
+  var waarnDatum=or(v('waarnDatum'),'DATUM / DATA');
+  var waarnVan=or(v('waarnVan'),'...');
+  var waarnTot=or(v('waarnTot'),'...');
+  var uurtarief=or(v('uurtarief'),'...');
+  var factuurTermijn=or(v('factuurTermijn'),'...');
+  var betaalTermijn=or(v('betaalTermijn'),'...');
+  var reisBlokken=[];
+  if(state.reisWW&&v('reisWWBedrag')) reisBlokken.push('€ '+v('reisWWBedrag')+' voor de kosten van woon-werkverkeer');
+  if(state.km&&v('kmBedrag')) reisBlokken.push('€ '+v('kmBedrag')+' per gereden kilometer voor de reiskosten die gemaakt worden in het kader van de uitvoering van de opdracht');
+  var reisTekst=reisBlokken.length>0?' en '+reisBlokken.join(' en '):'';
+  var kmSpec=state.km?' en kilometerspecificatie':'';
+  var children=[];
+  children.push(paragraphXml([runXml('OVEREENKOMST VAN OPDRACHT VOOR INCIDENTELE WAARNEMING',{bold:true,size:28})],{align:'center',after:120,keepNext:true}));
+  children.push(paragraphXml([runXml('Modelovereenkomst voor branche of beroepsgroep | Landelijke Huisartsen Vereniging (LHV) – Incidentele waarneming huisarts',{italic:true,size:18,color:'666666'})],{align:'center',after:60}));
+  children.push(paragraphXml([runXml('Verklaring: ',{bold:true,highlight:true}),runXml('Deze overeenkomst is gebaseerd op de door de Belastingdienst op 30 september 2021 onder nummer 905-2021-82676-2-0 beoordeelde overeenkomst. De in die beoordeling als zodanig gemarkeerde bepalingen zijn ongewijzigd in deze overeenkomst opgenomen.',{highlight:true})],{after:180}));
+  children.push(paragraphXml([runXml('Partijen:',{bold:true,size:22})],{after:80,keepNext:true}));
+  children.push(paragraphXml([runXml('1. ',{bold:true}),runXml(ogNaam,{bold:true}),runXml(', huisarts, ingeschreven bij de Kamer van Koophandel (KvK-nummer: '+ogKvk+') op het adres '+ogAdres+', hierna te noemen de '),runXml('opdrachtgever',{bold:true}),runXml(';')],{after:60}));
+  children.push(paragraphXml([runXml('2. ',{bold:true}),runXml(onNaam,{bold:true}),runXml(', huisarts, ingeschreven bij de Kamer van Koophandel (KvK-nummer: '+onKvk+') op het adres '+onAdres+', hierna te noemen de '),runXml('opdrachtnemer',{bold:true}),runXml(';')],{after:60}));
+  children.push(paragraphXml([runXml('Hierna gezamenlijk te noemen '),runXml('partijen',{bold:true})],{after:180}));
+  children.push(paragraphXml([runXml('In aanmerking nemende:',{bold:true,size:22})],{after:80,keepNext:true}));
+  children.push(bulletLikeParagraph('Dat de opdrachtgever zelfstandig en voor eigen rekening en risico een huisartsenpraktijk voert;', {after:40}));
+  children.push(bulletLikeParagraph('Dat de opdrachtnemer als zelfstandig opdrachtnemer werkzaam is op het gebied van de huisartsenzorg en voor eigen rekening en risico de werkzaamheden uitoefent;', {after:40}));
+  children.push(bulletLikeParagraph('Dat opdrachtnemer als arts met als specialisatie huisarts staat ingeschreven in het BIG-register;', {after:40, runOpts:{highlight:true}}));
+  children.push(bulletLikeParagraph('Dat de opdrachtnemer op de hoogte is van de (fiscale) vereisten van (fiscaal) ondernemerschap en meent hieraan te voldoen en het voorts duidelijk is, dat de onderhavige overeenkomst geen fiscaal ondernemerschap garandeert;', {after:40}));
+  children.push(bulletLikeParagraph('Dat de opdrachtgever de wens heeft ten behoeve van zijn praktijk voor korte tijd een huisarts werkzaam te laten zijn en dat de opdrachtnemer in de praktijk van de opdrachtgever werkzaam wenst te zijn;', {after:40}));
+  children.push(bulletLikeParagraph('Dat de opdrachtgever, door het verlenen aan opdrachtnemer van deze overeenkomst van opdracht, door de opdrachtnemer huisartsenzorg wil laten verzorgen;', {after:40}));
+  children.push(bulletLikeParagraph('Dat opdrachtnemer bereid en in staat is deze huisartsenzorg te verlenen;', {after:40}));
+  children.push(bulletLikeParagraph('Dat partijen met deze overeenkomst de voorwaarden willen aangeven, waaronder zij met elkaar wensen te contracteren;', {after:40}));
+  children.push(bulletLikeParagraph('Dat partijen uitdrukkelijk niet beogen om een arbeidsovereenkomst aan te gaan in de zin van artikel 7:610 e.v. B.W. en uitsluitend met elkaar wensen te contracteren op basis van een overeenkomst van opdracht in de zin van artikel 7:400 B.W.;', {after:40}));
+  children.push(bulletLikeParagraph('Dat partijen ervoor kiezen om in voorkomende gevallen de fictieve dienstbetrekking van thuiswerkers of gelijkgestelden zoals bedoeld in de artikelen 2b en 2c Uitvoeringsbesluit Loonbelasting 1965 en de artikelen 1 en 5 van het Besluit aanwijzing gevallen waarin arbeidsverhouding als dienstbetrekking wordt beschouwd (Besluit van 24 december 1986, Stb. 1986, 655), buiten toepassing te laten en daartoe deze overeenkomst opstellen en ondertekenen voordat uitbetaling plaatsvindt;', {after:40, runOpts:{highlight:true}}));
+  children.push(bulletLikeParagraph('Dat partijen met het oog op een juiste interpretatie van onderstaande contractsbepalingen, de door partijen beoogde uitvoering van de overeenkomst van opdracht en de kwalificatie van hun rechtsverhouding in het algemeen het navolgende opmerken:', {after:40, runOpts:{highlight:true}}));
+  children.push(paragraphXml([runXml('○ Dat de opdrachtnemer zelfstandig de feitelijke huisartsenzorg verleent aan de patiënt en een eigen professionele verantwoordelijkheid heeft en zelf altijd verantwoordelijk is voor – en aanspreekbaar zal zijn op zijn of haar professionele handelen in de praktijk;', {highlight:true})],{indentLeft:720,hanging:360,after:20}));
+  children.push(paragraphXml([runXml('○ Dat het de opdrachtnemer uitdrukkelijk vrijstaat om ook voor derden werkzaam te zijn;', {highlight:true})],{indentLeft:720,hanging:360,after:20}));
+  children.push(paragraphXml([runXml('○ Dat de opdrachtnemer voor de werkzaamheden in de praktijk van opdrachtgever naar de mening van partijen niet verplicht verzekerd is voor de werknemersverzekeringen, alsmede geen loonbelasting en sociale premies door de opdrachtgever behoeven te worden afgedragen;', {highlight:true})],{indentLeft:720,hanging:360,after:20}));
+  children.push(bulletLikeParagraph('Dat de opdrachtnemer zich er van bewust is, dat hij vanwege het ontbreken van een fictieve- of echte dienstbetrekking, geen (sociale verzekerings)uitkering kan claimen.', {after:40}));
+  children.push(bulletLikeParagraph('Dat deze overeenkomst is gebaseerd op de door de Belastingdienst op 30 september 2021 onder nummer 905-2021-82676-2-0 beoordeelde overeenkomst.', {after:180}));
+  children.push(paragraphXml([runXml('zijn overeengekomen als volgt:',{bold:true,italic:true})],{after:120}));
+  function heading(txt){ children.push(paragraphXml([runXml(txt,{bold:true,size:22})],{before:120,after:60,keepNext:true})); }
+  heading('Artikel 1. Begrippen');
+  children.push(paragraphXml([runXml('1.1 Patiënt(en): de zorgvrager(s) op het gebied van huisartsenzorg.')],{after:20}));
+  children.push(paragraphXml([runXml('1.2 Opdracht: een door de opdrachtnemer van de opdrachtgever aanvaard aanbod van opdracht.')],{after:20}));
+  children.push(paragraphXml([runXml('1.3 Overeenkomst: deze overeenkomst met eventuele daarbij behorende bijlagen.')],{after:20}));
+  children.push(paragraphXml([runXml('1.4 Huisartsenzorg: de door opdrachtnemer ten behoeve van de patiënten te verrichten werkzaamheden, welke omvatten de geneeskundige advisering / behandeling van de patiënt als huisarts.')],{after:20}));
+  heading('Artikel 2. Onderwerp van de overeenkomst');
+  children.push(paragraphXml([runXml('2.1 Met inachtneming van de zorgplicht als omschreven in artikel 7:401 B.W. verleent de opdrachtnemer de huisartsenzorg zelfstandig en is opdrachtnemer vrij te bepalen op welke wijze de huisartsenzorg wordt verleend. Opdrachtnemer verricht de werkzaamheden naar eigen inzicht en zonder toezicht en leiding van Opdrachtgever. Het staat opdrachtgever vrij ter zake van de huisartsenzorg aanwijzingen te geven als bedoeld in artikel 7:402 B.W, hetgeen betekent dat aanwijzingen en instructies mogen worden gegeven terzake van het resultaat van de opdracht, maar geen aanwijzingen of instructies kunnen worden gegeven aangaande de wijze waarop de opdracht feitelijk moet worden verricht.',{highlight:true})],{after:40}));
+  children.push(paragraphXml([runXml('2.2 Partijen hebben uitdrukkelijk niet de bedoeling een arbeidsovereenkomst te sluiten in de zin van artikel 7:610 e.v. B.W. of een fictieve dienstbetrekking tot stand te laten komen. Ook komt met het bepaalde in deze overeenkomst geen overeenkomst van lastgeving, als bedoeld in artikel 7:414 e.v. B.W. tot stand. Partijen contracteren uitsluitend met elkaar onder een overeenkomst van opdracht als bedoeld in artikel 7:400 B.W.')],{after:40}));
+  children.push(paragraphXml([runXml('2.3 Aangezien partijen uitsluitend met elkaar willen contracteren op basis van een overeenkomst van opdracht als bedoeld in artikel 7:400 B.W., verbinden partijen zich ertoe om hun feitelijke gedragingen bij de uitvoering van de huisartsenzorg in overeenstemming te doen zijn met de inhoud en strekking van de overeenkomst teneinde de uitvoering van de wederzijdse contractuele verplichtingen binnen het wettelijk kader van een overeenkomst van opdracht te kunnen uitvoeren.')],{after:40}));
+  children.push(paragraphXml([runXml('2.4 Partijen verklaren zich er van bewust te zijn dat door deze overeenkomst geen dienstbetrekking ontstaat tussen Opdrachtgever en Opdrachtnemer.')],{after:40}));
+  heading('Artikel 3. Uitvoering van de werkzaamheden');
+  children.push(paragraphXml([runXml('3.1 Partijen gaan met elkaar een Overeenkomst van Opdracht voor bepaalde tijd aan op '),runXml(waarnDatum,{bold:true}),runXml(' van '),runXml(waarnVan+' uur',{bold:true}),runXml(' tot '),runXml(waarnTot+' uur',{bold:true}),runXml('. Deze overeenkomst eindigt door het verstrijken van de voormelde duur.')],{after:40}));
+  heading('Artikel 4. Verplichtingen en Faciliteiten van de opdrachtgever');
+  children.push(paragraphXml([runXml('4.1 De opdrachtgever zal de opdrachtnemer in staat stellen de overeengekomen huisartsenzorg te verlenen, door al hetgeen in dat kader redelijkerwijs van de opdrachtgever kan worden verlangd, te doen.')],{after:30}));
+  children.push(paragraphXml([runXml('4.2 De opdrachtgever stelt ten behoeve van de uitoefening van de werkzaamheden door de opdrachtnemer voldoende personele ondersteuning ter beschikking.')],{after:30}));
+  children.push(paragraphXml([runXml('4.3 De opdrachtgever zal zijn patiëntenadministratie ter beschikking stellen aan de opdrachtnemer, die hiervan naar eigen inzicht bij de uitvoering van deze overeenkomst gebruik kan maken. De opdrachtnemer zal ervoor zorg dragen, dat deze administratie op verantwoorde wijze, zonder nadelige gevolgen voor de patiënten en voor de opdrachtgever, plaatsvindt. De opdrachtgever behoudt afschriften van de gegevens.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('4.4 De opdrachtgever stelt voor zijn rekening aan opdrachtnemer zijn huisartsenpraktijk, een eigen spreekkamer, al het voorgaande met inbegrip van de inrichting (in de meest uitgebreide zin) en de overige praktijkvoorzieningen ter beschikking. De opdrachtgever verplicht zich ertoe zich te onthouden van het geven van verplichtende voorschriften met betrekking tot de wijze van gebruik van de praktijk.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('4.5 Alle goederen, daaronder begrepen schriftelijke stukken (originelen, afschriften en fotokopieën), welke de opdrachtnemer ten behoeve van de opdrachtgever gedurende het bestaan van deze overeenkomst onder zich krijgt, zijn en blijven eigendom van de opdrachtgever. De originelen van de schriftelijke stukken dienen te allen tijde op de praktijk van de opdrachtgever te blijven.')],{after:30}));
+  children.push(paragraphXml([runXml('4.6 Bij de beëindiging van deze overeenkomst is de opdrachtnemer gehouden alle goederen van of ten behoeve van de opdrachtgever, die hij op het moment van beëindiging onder zich heeft (waaronder de in lid 5 bedoelde schriftelijke stukken), onverwijld ter beschikking te stellen aan de opdrachtgever.')],{after:30}));
+  heading('Artikel 5. Verplichtingen van de opdrachtnemer');
+  children.push(paragraphXml([runXml('5.1 De opdrachtnemer garandeert, dat hij bevoegd en bekwaam is om de huisartsenzorg te verlenen.')],{after:30}));
+  children.push(paragraphXml([runXml('5.2 De opdrachtnemer garandeert dat hij voldoet en tijdens de duur van deze overeenkomst blijft voldoen aan de beroepseisen zoals die voor de herregistratie als huisarts worden gesteld. Voorts verklaart de opdrachtnemer door ondertekening van de overeenkomst dat hij voldoet aan de eisen en kwaliteitsnormen die aan solistisch werkende zorgverleners gesteld worden in de Wet Kwaliteit, Klachten en Geschillen Zorg (Wkkgz). Voor wat betreft de volgende onderdelen sluit opdrachtnemer zich met betrekking tot de uitvoering van deze opdracht aan bij de volgende door de opdrachtgever getroffen regelingen:',{highlight:true})],{after:20}));
+  children.push(paragraphXml([runXml('a. de verplichting tot bewaking en beheersing van de kwaliteit van zorg als genoemd in artikel 7 van de Wkkgz;', {highlight:true})],{indentLeft:720,after:10}));
+  children.push(paragraphXml([runXml('b. de meldcode huiselijk geweld en kindermishandeling als genoemd in artikel 8 van de Wkkgz;', {highlight:true})],{indentLeft:720,after:10}));
+  children.push(paragraphXml([runXml('c. de procedure ‘Veilig Incident Melden’ als genoemd in artikel 9 Wkkgz;', {highlight:true})],{indentLeft:720,after:10}));
+  children.push(paragraphXml([runXml('d. de klachtenregeling als genoemd in artikel 13 van de Wkkgz;', {highlight:true})],{indentLeft:720,after:10}));
+  children.push(paragraphXml([runXml('e. de klachtenfunctionaris als genoemd in artikel 15 van de Wkkgz.', {highlight:true})],{indentLeft:720,after:30}));
+  children.push(paragraphXml([runXml('5.3 De opdrachtnemer heeft een eigen verantwoordelijkheid jegens de patiënt en is met inachtneming van de eigen professionele verantwoordelijkheid rechtstreeks en volledig verantwoordelijk en zo nodig jegens de opdrachtgever aansprakelijk voor de gevolgen van zijn verwijtbaar handelen en/of nalaten in de uitvoering van de verleende huisartsenzorg.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('5.4 Binnen het kader van de gemaakte afspraken ten aanzien van aard en omvang van de opdracht bepaalt de opdrachtnemer zelf, hoe hij zijn werkzaamheden zal verrichten.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('5.5 De opdrachtnemer en opdrachtgever komen overeen dat klachten van patiënten jegens opdrachtnemer worden afgewikkeld op grond van de klachtenregeling en met gebruik van de klachtenfunctionaris van opdrachtgever. Ter zake de geschillenbeslechting komen partijen overeen dat patiënten zich ter zake handelen of nalaten van opdrachtnemer kunnen wenden tot de geschillencommissie waarbij opdrachtnemer zelfstandig is aangesloten.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('5.6 De opdrachtnemer zal er vóór aanvang van de overeenkomst zorg voor dragen, dat opdrachtgever over de volgende documenten beschikt:')],{after:20}));
+  if(state.verz){ children.push(paragraphXml([runXml('5.7 De opdrachtnemer zal er vóór aanvang van de overeenkomst zorg voor dragen, dat opdrachtgever beschikt over een kopie van de polis van de door de opdrachtnemer afgesloten beroepsaansprakelijkheidsverzekering voor de door hem/haar verleende en nog te verlenen huisartsenzorg, alsmede het meest recente bewijs van betaling van de premie voor die verzekering.')],{after:20})); }
+  children.push(paragraphXml([runXml('5.8 De opdrachtnemer verklaart ingeschreven te staan in het handelsregister van de Kamer van Koophandel. Daarnaast verklaart opdrachtnemer ingeschreven te staan in het Landelijk Register Zorgaanbieders.')],{after:30}));
+  children.push(paragraphXml([runXml('5.9 Indien de opdrachtnemer verhinderd is om de overeenkomst van opdracht zelf uit te voeren, zal de opdrachtnemer onverwijld opdrachtgever daaromtrent inlichten. Opdrachtnemer kan een vervanger aanwijzen. Opdrachtnemer meldt in dat geval aan opdrachtgever wie de werkzaamheden zal uitvoeren. De vervanger dient met het oog op het verlenen van verantwoorde zorg aan dezelfde beroepseisen te voldoen, die in deze overeenkomst aan opdrachtnemer worden gesteld. De opdrachtgever heeft slechts dan het recht om een vervanger niet toe te laten, indien de opdrachtgever gemotiveerd kan aangeven, dat de door opdrachtnemer aangedragen vervanger ongeschikt is voor het verlenen van huisartsenzorg (bijvoorbeeld op basis van eerder negatieve ervaringen met de vervanger, een gegronde klacht tegen de vervanger, etc.) dan wel niet aan de in de overeenkomst aan de opdrachtnemer gestelde eisen voldoet.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('5.10 Bij vervanging als bedoeld in artikel 5.9, is de opdrachtnemer jegens de opdrachtgever aansprakelijk voor het handelen en/of nalaten van de vervanger. Bij vervanging anders dan bedoeld in art. 5.9, waarbij opdrachtnemer niet de opdrachtgever is van de vervanger, is de opdrachtnemer jegens de opdrachtgever niet aansprakelijk voor het handelen en/of nalaten van de vervanger.')],{after:30}));
+  heading('Artikel 6. Geheimhouding');
+  children.push(paragraphXml([runXml('6.1 De opdrachtnemer zal de wettelijke bepalingen met betrekking tot bescherming van de persoonlijke levenssfeer en privacy van patiënten in acht nemen. Bovendien verbindt de opdrachtnemer zich voldoende maatregelen te nemen om geheimhouding te verzekeren ten aanzien van alle gegevens waarvan de opdrachtnemer kennis neemt bij het verlenen van de huisartsenzorg ten behoeve van de opdrachtgever en/of patiënten. Dit met het doel om de persoonsgegevens van de patiënten te beschermen.')],{after:30}));
+  children.push(paragraphXml([runXml('6.2 De opdrachtnemer is gehouden alle van de opdrachtgever afkomstige informatie en bedrijfsgegevens en de in het kader van de uitvoering van door de opdrachtgever verstrekte opdracht(en) te zijner kennis gekomen of ontwikkelde informatie, geheim te houden. Het is de opdrachtnemer verboden om zonder toestemming van de andere partijen bedoelde informatie aan te wenden voor eigen gebruik of gebruik door derden.')],{after:30}));
+  children.push(paragraphXml([runXml('6.3 De ten aanzien van de opdrachtnemer in lid 1 geformuleerde geheimhouding geldt evenzeer voor de opdrachtgever.')],{after:30}));
+  children.push(paragraphXml([runXml('6.4 De geheimhoudingsverplichting geldt zowel tijdens als na de afloop van de overeenkomst.')],{after:30}));
+  children.push(paragraphXml([runXml('6.5 De opdrachtgever is eigenaar en beheerder van alle patiëntendossiers in de informatiesystemen (HIS en/of KIS) van de opdrachtgever. Het is de opdrachtnemer niet toegestaan de dossiers in te zien van andere dan aan zijn zorg toevertrouwde patiënten.')],{after:30}));
+  heading('Artikel 7. Honorering en declaratie');
+  children.push(paragraphXml([runXml('7.1 De opdrachtgever betaalt aan de opdrachtnemer een vergoeding ter grootte van '),runXml('€ '+uurtarief,{bold:true}),runXml(' per gewerkt uur'+reisTekst+'. Het voormelde uurtarief is niet van toepassing op eventueel voor opdrachtgever te verrichten avond-, nacht- en weekenddiensten.')],{after:30}));
+  children.push(paragraphXml([runXml('7.2 De opdrachtnemer zal binnen '),runXml(factuurTermijn,{bold:true}),runXml(' kalenderdagen na afloop van de opdracht met de daarbij behorende urenspecificatie'+kmSpec+' een door hem/haar vervaardigde factuur doen toekomen voor de verleende huisartsenzorg.')],{after:30}));
+  children.push(paragraphXml([runXml('7.3 Indien de opdrachtgever voor haar facturatie nadere gegevens nodig heeft, verplicht de opdrachtnemer zich jegens de opdrachtgever om binnen 14 kalenderdagen na een verzoek daartoe de verzochte gegevens te verstrekken.')],{after:30}));
+  children.push(paragraphXml([runXml('7.4 De opdrachtgever zal het door de opdrachtnemer gefactureerde bedrag binnen '),runXml(betaalTermijn,{bold:true}),runXml(' kalenderdagen voldoen.')],{after:30}));
+  children.push(paragraphXml([runXml('7.5 Indien de opdrachtnemer de overeengekomen werkzaamheden niet heeft uitgevoerd, dan wel door een vervanger heeft laten uitvoeren, is de opdrachtgever geen vergoedingen verschuldigd aan de opdrachtnemer.',{highlight:true})],{after:30}));
+  heading('Artikel 8. Aansprakelijkheid');
+  children.push(paragraphXml([runXml('8.1 De opdrachtnemer staat in voor de door hem/haar verleende huisartsenzorg. De opdrachtgever is niet aansprakelijk voor de schade, die de opdrachtnemer lijdt tijdens het verlenen van de huisartsenzorg als gevolg van gedragingen of nalaten van de patiënt of een derde jegens de opdrachtnemer. Opdrachtnemer is jegens patiënt en/of opdrachtgever aansprakelijk voor schade die de patiënt lijdt als gevolg van gedragingen of nalaten van Opdrachtnemer of door Opdrachtnemer zelf ingeschakelde derden.',{highlight:true})],{after:30}));
+  children.push(paragraphXml([runXml('8.2 De opdrachtnemer draagt zorg voor een passende beroeps- en bedrijfsaansprakelijkheidsverzekering (met een binnen het werkveld gangbare dekking) en zorgt ervoor, dat ter zake van deze voormelde aansprakelijkheidsverzekering(en) afdoende dekking gewaarborgd zal blijven door de premies tijdig te betalen.')],{after:30}));
+  heading('Artikel 9. Geschil en rechtskeuze');
+  children.push(paragraphXml([runXml('9.1 Op de overeenkomst is Nederlands recht van toepassing.')],{after:30}));
+  children.push(paragraphXml([runXml('9.2 Alle geschillen, welke tussen ondergetekenden mochten opkomen, zowel juridische als feitelijke, met betrekking tot de uitleg of de uitvoering van deze overeenkomst, zullen de partijen in eerste instantie gezamenlijk trachten op te lossen met behulp van mediation.')],{after:30}));
+  children.push(paragraphXml([runXml('De partij, die mediation verlangt zal daarvan schriftelijk mededeling doen aan de andere partij. De mededeling dient tevens een aanduiding van het onderwerp te bevatten waarover mediation verlangd wordt.')],{after:30}));
+  children.push(paragraphXml([runXml('Wanneer binnen een termijn van 14 kalenderdagen geen overeenkomst is bereikt omtrent het voorleggen van het geschil aan een mediator, dan wel indien het niet mogelijk is gebleken het geschil middels mediation op te lossen, staat het partijen vrij het geschil voor te leggen aan de competente Rechtbank.')],{after:60}));
+  children.push(paragraphXml([runXml('Aldus overeengekomen en in tweevoud ondertekend op '),runXml(or(formatDutchDate(v('ondertekenDatum')),'[datum]'),{bold:true})],{after:20}));
+  children.push(paragraphXml([runXml('te '),runXml(or(v('ondertekenPlaats'),'[plaats]'),{bold:true})],{after:120}));
+  // Signature table (two columns side by side)
+  var sigCellProps='<w:tcPr><w:tcW w:w="4535" w:type="dxa"/><w:tcBorders><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tcBorders></w:tcPr>';
+  var sigCell=function(label,name){
+    return '<w:tc>'+sigCellProps+
+      '<w:p><w:pPr><w:spacing w:after="40"/></w:pPr><w:r><w:rPr><w:b/></w:rPr>'+xmlText(label)+'</w:r></w:p>'+
+      '<w:p><w:pPr><w:spacing w:after="40"/></w:pPr><w:r>'+xmlText('Naam: '+name)+'</w:r></w:p>'+
+      '<w:p><w:pPr><w:spacing w:before="600" w:after="40"/></w:pPr><w:r>'+xmlText('Handtekening: ___________________')+'</w:r></w:p>'+
+      '</w:tc>';
+  };
+  children.push('<w:tbl><w:tblPr><w:tblW w:w="9070" w:type="dxa"/><w:tblBorders><w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/><w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/></w:tblBorders><w:tblLayout w:type="fixed"/></w:tblPr><w:tblGrid><w:gridCol w:w="4535"/><w:gridCol w:w="4535"/></w:tblGrid><w:tr>'+sigCell('Opdrachtgever:',ogNaam)+sigCell('Opdrachtnemer:',onNaam)+'</w:tr></w:tbl>');
+  children.push(paragraphXml([runXml('Gemarkeerde bepalingen (geel) mogen niet worden gewijzigd — deze zijn bepalend voor het oordeel van de Belastingdienst dat geen loonheffingen verschuldigd zijn.',{size:18,color:'666666'})],{after:40}));
+  var sectPr='<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1418" w:right="1418" w:bottom="1134" w:left="1418" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr>';
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">'+
+  '<w:body>'+children.join('')+sectPr+'</w:body></w:document>';
+}
+function coreXml(){
+  var now=new Date().toISOString();
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'+
+  '<dc:title>Waarneemovereenkomst incidentele waarneming</dc:title><dc:creator>LHV Contractgenerator</dc:creator><cp:lastModifiedBy>LHV Contractgenerator</cp:lastModifiedBy><dcterms:created xsi:type="dcterms:W3CDTF">'+now+'</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">'+now+'</dcterms:modified></cp:coreProperties>';
+}
+function appXml(){
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"><Application>Contractgenerator Incidentele Waarneming</Application><DocSecurity>0</DocSecurity><ScaleCrop>false</ScaleCrop><HeadingPairs><vt:vector size="2" baseType="variant"><vt:variant><vt:lpstr>Titel</vt:lpstr></vt:variant><vt:variant><vt:i4>1</vt:i4></vt:variant></vt:vector></HeadingPairs><TitlesOfParts><vt:vector size="1" baseType="lpstr"><vt:lpstr>Document</vt:lpstr></vt:vector></TitlesOfParts><Company></Company><LinksUpToDate>false</LinksUpToDate><SharedDoc>false</SharedDoc><HyperlinksChanged>false</HyperlinksChanged><AppVersion>16.0000</AppVersion></Properties>';
+}
+function contentTypesXml(){
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'+
+  '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'+
+  '<Default Extension="xml" ContentType="application/xml"/>'+
+  '<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>'+
+  '<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>'+
+  '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'+
+  '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>'+
+  '</Types>';
+}
+function packageRelsXml(){
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+
+  '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>'+
+  '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>'+
+  '<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>'+
+  '</Relationships>';
+}
+function documentRelsXml(){
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+
+  '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'+
+  '</Relationships>';
+}
+function stylesXml(){
+  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
+  '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'+
+  '<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:eastAsia="Calibri" w:cs="Calibri"/>'+
+  '<w:sz w:val="21"/><w:szCs w:val="21"/><w:lang w:val="nl-NL" w:eastAsia="nl-NL" w:bidi="ar-SA"/></w:rPr></w:rPrDefault>'+
+  '<w:pPrDefault><w:pPr><w:spacing w:after="60" w:line="276" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>'+
+  '<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style>'+
+  '<w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/>'+
+  '<w:pPr><w:keepNext/><w:spacing w:before="240" w:after="120"/><w:outlineLvl w:val="0"/></w:pPr>'+
+  '<w:rPr><w:b/><w:sz w:val="28"/><w:szCs w:val="28"/></w:rPr></w:style>'+
+  '<w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/>'+
+  '<w:pPr><w:keepNext/><w:spacing w:before="120" w:after="60"/><w:outlineLvl w:val="1"/></w:pPr>'+
+  '<w:rPr><w:b/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr></w:style>'+
+  '<w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont"><w:name w:val="Default Paragraph Font"/></w:style>'+
+  '<w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table"/>'+
+  '<w:tblPr><w:tblInd w:w="0" w:type="dxa"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/>'+
+  '<w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style>'+
+  '</w:styles>';
+}
+function crc32(bytes){
+  if(!window.__crcTable){
+    var table=new Uint32Array(256);
+    for(var i=0;i<256;i++){
+      var c=i;
+      for(var j=0;j<8;j++) c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);
+      table[i]=c>>>0;
+    }
+    window.__crcTable=table;
+  }
+  var crc=0xFFFFFFFF;
+  var tbl=window.__crcTable;
+  for(var k=0;k<bytes.length;k++) crc=tbl[(crc^bytes[k])&0xFF]^(crc>>>8);
+  return (crc^0xFFFFFFFF)>>>0;
+}
+function concatUint8(arrays){
+  var total=arrays.reduce((n,a)=>n+a.length,0);
+  var out=new Uint8Array(total);
+  var off=0;
+  arrays.forEach(a=>{out.set(a,off); off+=a.length;});
+  return out;
+}
+function le16(n){var b=new Uint8Array(2); new DataView(b.buffer).setUint16(0,n,true); return b;}
+function le32(n){var b=new Uint8Array(4); new DataView(b.buffer).setUint32(0,n,true); return b;}
+function dosDateTime(){
+  var d=new Date();
+  var year=Math.max(1980,d.getFullYear());
+  var dosTime=((d.getHours()&31)<<11)|((d.getMinutes()&63)<<5)|((Math.floor(d.getSeconds()/2))&31);
+  var dosDate=(((year-1980)&127)<<9)|(((d.getMonth()+1)&15)<<5)|((d.getDate())&31);
+  return {time:dosTime,date:dosDate};
+}
+function makeStoredZip(files){
+  var encoder=new TextEncoder();
+  var dt=dosDateTime();
+  var localParts=[];
+  var centralParts=[];
+  var offset=0;
+  files.forEach(function(file){
+    var nameBytes=encoder.encode(file.name);
+    var dataBytes=(file.data instanceof Uint8Array)?file.data:encoder.encode(file.data);
+    var crc=crc32(dataBytes);
+    var localHeader=concatUint8([
+      le32(0x04034b50), le16(20), le16(0), le16(0), le16(dt.time), le16(dt.date),
+      le32(crc), le32(dataBytes.length), le32(dataBytes.length), le16(nameBytes.length), le16(0), nameBytes, dataBytes
+    ]);
+    localParts.push(localHeader);
+    var centralHeader=concatUint8([
+      le32(0x02014b50), le16(20), le16(20), le16(0), le16(0), le16(dt.time), le16(dt.date),
+      le32(crc), le32(dataBytes.length), le32(dataBytes.length), le16(nameBytes.length), le16(0), le16(0), le16(0), le16(0), le32(0), le32(offset), nameBytes
+    ]);
+    centralParts.push(centralHeader);
+    offset += localHeader.length;
+  });
+  var central=concatUint8(centralParts);
+  var locals=concatUint8(localParts);
+  var eocd=concatUint8([
+    le32(0x06054b50), le16(0), le16(0), le16(files.length), le16(files.length), le32(central.length), le32(locals.length), le16(0)
+  ]);
+  return new Blob([locals, central, eocd], {type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+}
+function generateDocxBlob(){
+  var files=[
+    {name:'[Content_Types].xml', data:contentTypesXml()},
+    {name:'_rels/.rels', data:packageRelsXml()},
+    {name:'docProps/core.xml', data:coreXml()},
+    {name:'docProps/app.xml', data:appXml()},
+    {name:'word/_rels/document.xml.rels', data:documentRelsXml()},
+    {name:'word/styles.xml', data:stylesXml()},
+    {name:'word/document.xml', data:buildDocumentXml()}
+  ];
+  return makeStoredZip(files);
+}
+function getFilename(){
+  var fn='Waarneemovereenkomst_'+(v('ogNaam')||'OG')+'_'+(v('onNaam')||'ON')+'.docx';
+  return fn.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_.\-]/g,'');
+}
+function canProceed(){
+  var allChecked=state.checks.chk1&&state.checks.chk2&&state.checks.chk3&&state.checks.chk4;
+  if(!allChecked){alert('Vink eerst alle punten van de pre-download checklist af.');return false;}
+  if(state.duurBlocked){alert('De ingevoerde periode is te lang voor incidentele waarneming. Gebruik het duurwaarneming-model.');return false;}
+  return true;
+}
+function downloadContract(){
+  if(!canProceed())return;
+  var blob=generateDocxBlob();
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.href=url;
+  a.download=getFilename();
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function shareContract(){
+  if(!canProceed())return;
+  var blob=generateDocxBlob();
+  var fn=getFilename();
+  var file=new File([blob],fn,{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+  if(navigator.canShare&&navigator.canShare({files:[file]})){
+    navigator.share({
+      title:'Waarneemovereenkomst',
+      text:'Hierbij de overeenkomst van opdracht voor incidentele waarneming. Graag in tweevoud printen, beide exemplaren ondertekenen en één exemplaar retourneren.',
+      files:[file]
+    }).catch(function(err){
+      if(err.name!=='AbortError') console.error('Share failed:',err);
+    });
+  } else {
+    // Fallback: regular download
+    downloadContract();
+  }
+}
+// Init: detect Web Share API and show share button
+(function(){
+  // Load remembered opdrachtgever data
+  loadRemembered();
+  if(!document.getElementById('ondertekenDatum').value){
+    setTodayDate();
+  }
+  // Load client library
+  refreshClientPicker();
+  var sb=document.getElementById('shareBtn');
+  if(sb && navigator.canShare){
+    try {
+      var testFile=new File(['test'],'test.docx',{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+      if(navigator.canShare({files:[testFile]})){
+        sb.classList.remove('hidden');
+      }
+    } catch(e){}
+  }
+  // Show install banner on iOS Safari if not already installed and not dismissed
+  var isStandalone=window.navigator.standalone===true||window.matchMedia('(display-mode:standalone)').matches;
+  var dismissed=false;
+  try{dismissed=localStorage.getItem('installDismissed')==='1';}catch(e){}
+  var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  if(!isStandalone&&!dismissed&&isIOS){
+    var ib=document.getElementById('installBanner');
+    if(ib)ib.style.display='block';
+  }
+})();
+update();
+
+</script>
+</body>
+</html>
