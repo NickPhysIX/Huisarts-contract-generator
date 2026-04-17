@@ -15,19 +15,17 @@ De tool is dus primair gebouwd voor **één praktijk**, maar werkt in principe v
 ## Wie heeft dit gebouwd?
 
 Ontwikkeld door **Niels Braakman** als persoonlijk project in de vrije tijd.
-
-- Geen affiliatie met het Haaglanden Medisch Centrum (mijn werkgever) of enige andere organisatie
-- Geen affiliatie met de LHV of de Belastingdienst
+ 
+- Geen affiliatie met de LHV, de Belastingdienst of enige andere organisatie
 - Niet-commercieel, gratis te gebruiken, open source
 
 ## Hoe is het gebouwd?
 
-Dit project is ook een experiment in **multi-AI samenwerking**. Het bouwproces bestond uit meerdere iteraties waarbij verschillende modellen elkaar aanvulden en bekritiseerden.
+Dit project is een experiment in **multi-AI samenwerking**. Het bouwproces bestond uit meerdere iteraties waarbij verschillende LLM modellen elkaar aanvulden en bekritiseerden.
 
 - **Claude (Anthropic)** — initiële architectuur, formulierlogica, juridische structuur, iteratieve bugfixes, mobiele UX, iOS Share Sheet integratie en PWA-setup
 - **ChatGPT (OpenAI)** — meerdere rondes van red-teaming en juridische review, concrete punchlists voor verbeteringen en de native `.docx`-export-engine (OOXML-generatie zonder externe libraries)
 - **Gemini (Google)** — privacy-review en UX-suggesties
-- **Grok (xAI)** — aanvullende UX-feedback
 
 Elke AI heeft op basis van de vorige iteratie kritiek geleverd. De resulterende tool is stap voor stap verbeterd tot een stabiele versie. De eindregie — welke suggesties wel of niet zijn doorgevoerd, de inhoudelijke afwegingen en deployment — lag bij mij.
 
