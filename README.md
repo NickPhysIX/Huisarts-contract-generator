@@ -28,8 +28,8 @@ Voor huisartsen die werken met de **LHV-modelovereenkomst voor incidentele waarn
 4. Controleer of de opdracht echt past binnen **incidentele waarneming**.  
 5. Bekijk eventuele waarschuwingen over duur of contracttype.  
 6. Vink de checklist af.  
-7. Download of deel het gegenereerde `.docx`-contract.  
-8. Controleer het document altijd zelf vóór ondertekening.
+7. Deel en/of download het gegenereerde `.docx`-contract.  
+8. **Controleer het document altijd vóór ondertekening.**
 
 ## Belangrijke grenzen van de tool
 
