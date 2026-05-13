@@ -20,6 +20,7 @@ Deze tool probeert die praktische laag toe te voegen:
 - eerst nadenken over het type inzet;
 - daarna pas invullen;
 - waarschuwingen tonen bij risicovolle situaties, zonder elke grijze route automatisch op slot te zetten;
+- expliciet laten controleren dat KvK, Wtza-melding en LRZa-vermelding niet door elkaar worden gehaald;
 - een bruikbaar `.docx`-contract genereren;
 - geen gegevens naar een server sturen.
 
@@ -29,15 +30,15 @@ De tool werkt in principe voor iedere huisarts die met de LHV-modellen voor inci
 
 Ontwikkeld door **Niels Braakman** als persoonlijk project.
 
-- Geen affiliatie met de LHV, de Belastingdienst of enige andere organisatie
+- Geen affiliatie met de LHV, de Belastingdienst, IGJ, CIBG of enige andere organisatie
 - Niet-commercieel, gratis te gebruiken, open source
 
 ## Hoe is het gebouwd?
 
 Dit project is een experiment in **multi-AI samenwerking**. Het bouwproces bestond uit meerdere iteraties waarbij verschillende LLM-modellen zijn gebruikt voor het bouwen van de tool en feedback geven op het resultaat.
 
-- **Claude (Anthropic)** — architectuur, formulierlogica, juridische structuur, iteratieve bugfixes, mobiele UX, iOS Share Sheet integratie, PWA-setup, en de uitbreiding naar duurwaarneming inclusief wegwijzer en type-inzet-flow. Vanaf v5.2 ook de Wtza-/LRZa-aanscherping in de pre-download checklist.
-- **ChatGPT (OpenAI)** — meerdere rondes van red-teaming en juridische review, concrete punchlists voor verbeteringen, de native `.docx`-export-engine (OOXML-generatie zonder externe libraries), en finetuning van de v5.1/v5.1.1 wijzigingen (toonzetting wegwijzer, type inzet, bevestigingsdialoog bij hergebruik, en eigen-verantwoordelijkheid bij grijze routes).
+- **Claude (Anthropic)** — architectuur, formulierlogica, juridische structuur, iteratieve bugfixes, mobiele UX, iOS Share Sheet integratie, PWA-setup, en de uitbreiding naar duurwaarneming inclusief wegwijzer en type-inzet-flow.
+- **ChatGPT (OpenAI)** — meerdere rondes van red-teaming en juridische review, concrete punchlists voor verbeteringen, de native `.docx`-export-engine (OOXML-generatie zonder externe libraries), finetuning van de v5.1/v5.1.1 wijzigingen, en documentatie/positionering voor de v5.2 Wtza/LRZa-aanscherping.
 - **Gemini (Google)** — privacy-review en UX-suggesties.
 
 De resulterende tool is stap voor stap verbeterd tot een stabiele versie. De eindregie — welke suggesties wel of niet zijn doorgevoerd, de inhoudelijke afwegingen en deployment — lag bij mij.
@@ -58,13 +59,16 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 3. **Model-specifieke waarschuwingen**  
    Bij signalen voor duurwaarneming, praktijkmedewerking, structurele inzet of ANW-only situaties waarschuwt de tool expliciet en wijst hij de officiële LHV-route aan waar dat passender lijkt. Bij twijfelroutes kan de gebruiker alsnog bewust doorgaan met duurwaarneming op eigen verantwoordelijkheid.
 
-4. **Pre-downloadchecklist met expliciete Wtza-check (v5.2)**  
-   De gebruiker moet expliciet bevestigen dat de belangrijkste randvoorwaarden zijn gecontroleerd vóór het contract wordt gedownload. Vanaf v5.2 zijn KvK-inschrijving en Wtza-melding (LRZa-status "gemeld") in twee aparte vinkjes opgesplitst, met directe links naar het zorgaanbiedersportaal en het meldportaal van de IGJ.
+4. **Pre-downloadchecklist**  
+   De gebruiker moet expliciet bevestigen dat de belangrijkste randvoorwaarden zijn gecontroleerd vóór het contract wordt gedownload.
 
-5. **Client-side `.docx`-export**  
+5. **Wtza/LRZa-controlepunt**  
+   Versie 5.2 voegt een expliciete checklistregel toe voor Wtza-melding en controle van de LRZa-vermelding, naast KvK-inschrijving.
+
+6. **Client-side `.docx`-export**  
    Het contract wordt lokaal in de browser gegenereerd als Word-document, zonder externe libraries.
 
-6. **Bewuste hergebruik-bevestiging**  
+7. **Bewuste hergebruik-bevestiging**  
    Bij hergebruik van de tool wordt het eerder gekozen contracttype niet automatisch toegepast: de gebruiker bevestigt expliciet of de wegwijzer opnieuw moet worden doorlopen.
 
 ## Wat doet de tool wél?
@@ -75,15 +79,16 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 - Valideert de duur (waarschuwing bij `>7 dagen` voor incidenteel, blokkade bij `>30 dagen`) om oneigenlijk gebruik van het incidentele model te voorkomen.
 - Splitst ANW-only afspraken expliciet af naar het aparte LHV-contracttype.
 - Verplicht een pre-download checklist waarin de gebruiker bevestigt dat de feitelijke situatie past bij het gekozen model.
-- **Wijst er expliciet op dat KvK-inschrijving en de Wtza-melding twee verschillende stappen zijn** (vanaf v5.2), en biedt directe links naar het zorgaanbiedersportaal en het IGJ-meldportaal.
 - Laat bij grijze routes tussen duurwaarneming en praktijkmedewerking bewust doorgaan toe, maar alleen met duidelijke waarschuwing dat de keuze voor rekening van partijen blijft.
+- Maakt expliciet onderscheid tussen KvK-inschrijving, Wtza-melding en LRZa-controle.
 - Draait volledig client-side: ingevulde contractgegevens worden niet naar een server verstuurd.
 
 ## Wat doet de tool niet?
 
 - **Geen juridisch advies.** De tool genereert een contracttekst, maar beoordeelt niet of de feitelijke arbeidsrelatie kwalificeert als overeenkomst van opdracht (DBA-proof).
+- **Geen fiscaal advies.** De tool geeft geen oordeel over loonheffingen, ondernemerschap of fiscale kwalificatie.
 - **Geen garantie op Belastingdienst-conformiteit.** De uiteindelijke kwalificatie hangt af van feitelijke uitvoering, niet alleen van de contracttekst.
-- **Geen controle of de Wtza-melding ook daadwerkelijk is gedaan.** De tool wijst de gebruiker erop en biedt links, maar de melding zelf gebeurt buiten de tool. De gebruiker is zelf verantwoordelijk voor naleving van de meldplicht.
+- **Geen Wtza- of LRZa-check namens de gebruiker.** De tool verwijst en herinnert, maar controleert geen registratie of melding automatisch.
 - **Geen vervanging van de officiële LHV-contractgenerator.** Voor praktijkmedewerking en ANW-only afspraken verwijst de tool naar de LHV-route.
 - **Geen onderhoudscontract.** Dit is een persoonlijk project zonder garanties. Bij wijzigingen in wet- en regelgeving kan de tool verouderen. De huidige modelovereenkomsten zijn geldig tot en met 31 december 2029.
 
@@ -101,18 +106,32 @@ Werkt de zzp-huisarts niet in plaats van de praktijkhouder, maar naast de prakti
 
 Voor avond-, nacht- en weekenddiensten bestaat een aparte LHV-route. Deze tool behandelt ANW-diensten alleen beperkt binnen de context van duurwaarneming, voor zover dat past bij het gekozen model. Voor ANW-only afspraken moet de officiële LHV-contractgenerator worden gebruikt.
 
-## Wtza-meldplicht en het Landelijk Register Zorgaanbieders
+## Wtza, LRZa en KvK
 
-Beide modelovereenkomsten bevatten een verklaring dat de waarnemer is ingeschreven in het Landelijk Register Zorgaanbieders (LRZa). Praktijkervaring leert dat hier een hardnekkig misverstand omheen leeft: dat de inschrijving automatisch ontstaat bij het aanmaken van een KvK-inschrijving.
+Versie 5.2 voegt een expliciete Wtza/LRZa-laag toe aan de toelichting en pre-downloadchecklist.
 
-Dat is te kort door de bocht:
+De tool maakt daarbij bewust onderscheid tussen drie dingen:
 
-- Een KvK-inschrijving met een passende zorg-SBI-code kan ertoe leiden dat de onderneming *zichtbaar* wordt op [zoeken.zorgaanbiedersportaal.nl](https://zoeken.zorgaanbiedersportaal.nl). De status is dan echter "nog niet gemeld".
-- Zichtbaarheid in het LRZa is **niet hetzelfde** als de Wtza-melding. De Wtza-melding bij de IGJ is een aparte, actieve handeling. Deze moet de waarnemer zelf doen via [toetredingzorgaanbieders.nl/melden](https://www.toetredingzorgaanbieders.nl/melden), uiterlijk drie maanden vóór de start van de zorg.
+1. **KvK-inschrijving**  
+   De waarnemer verklaart dat hij/zij staat ingeschreven in het handelsregister.
 
-De meldplicht onder de Wet toetreding zorgaanbieders (Wtza) geldt voor alle waarnemend huisartsen die vanuit een eigen onderneming werken — zowel bij incidentele waarneming als bij duurwaarneming. Alleen huisartsen volledig in loondienst zijn uitgezonderd. Niet melden kan leiden tot een bestuurlijke boete; het IGJ-boetebeleid begint in de praktijk met een schriftelijke waarschuwing.
+2. **LRZa/Zorgaanbiedersportaal**  
+   Een KvK-inschrijving met passende zorg-SBI-code kan ertoe leiden dat een onderneming zichtbaar wordt in het LRZa/Zorgaanbiedersportaal. Dat is nuttig om te controleren, maar het is niet hetzelfde als een Wtza-melding.
 
-Vanaf **v5.2** splitst de pre-download checklist deze twee verklaringen daarom op in twee aparte vinkjes (KvK-inschrijving en Wtza-melding/LRZa-status), met directe links naar het zorgaanbiedersportaal (om de eigen vermelding te controleren) en naar het IGJ-meldportaal (om de melding alsnog te doen). De contracttekst zelf is **niet** gewijzigd: de Belastingdienst-beoordeelde bepalingen blijven ongewijzigd overgenomen.
+3. **Wtza-melding**  
+   De Wtza-melding is een aparte handeling die de waarnemer zelf moet doen. De tool kan dit niet controleren en geeft geen bevestiging dat aan Wtza-verplichtingen is voldaan.
+
+De pre-downloadchecklist bevat daarom bij zowel incidentele waarneming als duurwaarneming een aparte bevestiging dat de gebruiker zich heeft gemeld bij de IGJ in het kader van de Wtza en de LRZa-vermelding heeft gecontroleerd. Dit is een bewust controlepunt, geen automatische verificatie.
+
+## Aanvullende vooraf-check: Waarneem-Risicoscan
+
+Deze contractgenerator helpt bij het maken van een passende modelovereenkomst. De feitelijke uitvoering van de opdracht blijft minstens zo belangrijk.
+
+Voor een bredere, oriënterende vooraf-check op DBA-/schijnzelfstandigheidsrisico is er een aparte, niet-officiële werkversie beschikbaar:
+
+https://nickphysix.github.io/Huisarts-zzp-risicoscan/
+
+De Waarneem-Risicoscan geeft geen juridisch of fiscaal advies, geen vrijwaring en is niet verbonden aan de officiële LHV-Vergewistool.
 
 ## Verschillen met het origineel
 
@@ -122,7 +141,9 @@ De gegenereerde contracttekst komt inhoudelijk overeen met de LHV-modelovereenko
 2. **Artikel 5 is consistent hernummerd** in de incidentele variant. Het origineel bevat een nummeringsfout; de inhoud van de bepalingen is niet aangepast.
 3. **ANW-only afspraken** maken geen onderdeel uit van deze generator. Voor ANW-only contracten verwijst de tool door naar de LHV-route. Binnen duurwaarneming kunnen ANW-diensten wel beperkt worden opgenomen.
 4. **Praktijkmedewerking** wordt niet als contracttype gegenereerd — de tool verwijst naar de LHV-contractgenerator wanneer de wegwijzer aangeeft dat dit waarschijnlijk het passende model is. In grijze routes kan de gebruiker toch doorgaan met duurwaarneming op eigen verantwoordelijkheid.
-5. **De export is een echte `.docx`** in plaats van een HTML-als-`.doc` workaround. De OOXML-structuur wordt client-side opgebouwd zonder externe libraries.
+5. **Wtza/LRZa** zijn toegevoegd als praktische controlepunten in toelichting en checklist. De contracttekst zelf wordt daardoor niet omgevormd tot een Wtza- of registratiebeoordeling.
+6. **De export is een echte `.docx`** in plaats van een HTML-als-`.doc` workaround. De OOXML-structuur wordt client-side opgebouwd zonder externe libraries.
+7. **Bestandsnamen zijn gestandaardiseerd** zodat incidentele waarneming en duurwaarneming hetzelfde patroon gebruiken, inclusief `YYYYMM` op basis van de startdatum wanneer beschikbaar.
 
 ## Privacy
 
@@ -153,7 +174,7 @@ De betere oplossing is dat de gecombineerde tool voor eenvoudige incidentele waa
 
 ## Advieslaag, geen poortwachter
 
-Een bewuste ontwerpkeuze in v5.1.1 is dat de tool bij twijfel tussen duurwaarneming en praktijkmedewerking niet automatisch alles blokkeert.
+Een bewuste ontwerpkeuze sinds v5.1.1 is dat de tool bij twijfel tussen duurwaarneming en praktijkmedewerking niet automatisch alles blokkeert.
 
 De tool doet dan drie dingen:
 
@@ -163,11 +184,9 @@ De tool doet dan drie dingen:
 
 Dit past bij het karakter van de tool: ondersteunen, structureren en waarschuwen, maar niet namens partijen beslissen. De tool blijft géén praktijkmedewerking-overeenkomst genereren.
 
-Dezelfde filosofie geldt voor de Wtza-melding in v5.2: de tool verplicht het vinkje "gemeld bij IGJ / LRZa-status gemeld" om af te ronden, maar controleert de daadwerkelijke melding niet. De gebruiker bevestigt op eigen verantwoordelijkheid en de tool maakt de stap zo eenvoudig mogelijk door de juiste links direct aan te bieden.
-
 ## Aansprakelijkheid
 
-**Gebruik op eigen risico.** Er wordt geen aansprakelijkheid aanvaard voor gevolgen van het gebruik van de gegenereerde contracten, onjuiste classificatie van de arbeidsrelatie, onjuiste invoer door de gebruiker of wijzigingen in wet- en regelgeving na de laatste update.
+**Gebruik op eigen risico.** Er wordt geen aansprakelijkheid aanvaard voor gevolgen van het gebruik van de gegenereerde contracten, onjuiste classificatie van de arbeidsrelatie, onjuiste invoer door de gebruiker, onjuiste of ontbrekende Wtza-melding/LRZa-controle, of wijzigingen in wet- en regelgeving na de laatste update.
 
 De uiteindelijke verantwoordelijkheid voor controle, passend gebruik en ondertekening blijft bij de gebruiker.
 
@@ -179,10 +198,27 @@ De tool verwijst naar en is inhoudelijk geïnspireerd door:
 - de Belastingdienst-modelovereenkomst incidentele waarneming huisarts (nr. 905-2021-82676-2-0);
 - de Belastingdienst-modelovereenkomst duurwaarneming huisarts (nr. 905-2021-82676-1-0);
 - algemene Belastingdienstinformatie over modelovereenkomsten;
-- LHV-informatie over de Wet toetreding zorgaanbieders (Wtza);
-- het zorgaanbiedersportaal en het IGJ-meldportaal voor het Landelijk Register Zorgaanbieders (LRZa).
+- LHV-informatie over zzp-wetgeving en Wtza;
+- het Zorgaanbiedersportaal/LRZa;
+- Toetredingzorgaanbieders.nl voor de Wtza-melding.
 
 Gebruikers moeten altijd de actuele officiële bronnen raadplegen voordat zij op de tekst vertrouwen.
+
+## Versie
+
+**v5.2.1**
+
+Hotfix ten opzichte van v5.2:
+
+- lege optionele tijden bij duurwaarneming worden niet meer als `[tijden]` of `([tijden])` in preview of contracttekst weergegeven;
+- het duurwaarnemingveld voor tijden is verduidelijkt als optioneel veld voor tijden of spreekuurblokken;
+- bestandsnamen zijn geharmoniseerd naar `overeenkomst_incidentele_waarneming_YYYYMM_opdrachtgever_opdrachtnemer.docx` en `overeenkomst_duurwaarneming_YYYYMM_opdrachtgever_opdrachtnemer.docx`;
+- `YYYYMM` wordt afgeleid uit de startdatum van de overeenkomst wanneer beschikbaar, met de huidige maand als fallback.
+
+**v5.2**
+
+- Wtza-melding, LRZa-vermelding en KvK-inschrijving zijn expliciet uit elkaar getrokken in toelichting en pre-downloadchecklist.
+- De bescheiden verwijzing naar de aparte Waarneem-Risicoscan is toegevoegd.
 
 ## Licentie
 

@@ -29,6 +29,7 @@ De tool helpt bij:
 - het herkennen van situaties waarin de officiële LHV-route voor praktijkmedewerking of ANW-diensten passender lijkt;
 - het invullen van opdrachtgever-, waarnemer-, datum-, tijd-, tarief- en contractgegevens;
 - het tonen van model-specifieke waarschuwingen, eigen-verantwoordelijkheidsteksten en pre-downloadchecklists;
+- het expliciet scheiden van **KvK-inschrijving**, **Wtza-melding** en controle van het **Landelijk Register Zorgaanbieders (LRZa)**;
 - het maken van een echte `.docx`-export;
 - het lokaal onthouden van optionele gegevens op het apparaat van de gebruiker.
 
@@ -69,16 +70,33 @@ Een kalenderperiode van drie maanden betekent dus niet automatisch duurwaarnemin
 
 Als de antwoorden eerder richting praktijkmedewerking of structurele inzet wijzen, toont de tool een waarschuwing en maakt hij de officiële LHV-route de primaire suggestie. De tool gooit de route niet automatisch op slot: de gebruiker kan, na bewuste eigen afweging, alsnog doorgaan met duurwaarneming. Die keuze blijft volledig voor rekening van partijen.
 
-## Wtza-meldplicht en het LRZa
+## Wtza en LRZa
 
-Beide modelovereenkomsten bevatten een verklaring dat de waarnemer is ingeschreven in het Landelijk Register Zorgaanbieders (LRZa). Een veelvoorkomend misverstand is dat deze inschrijving automatisch tot stand komt bij een KvK-inschrijving. Dat is te kort door de bocht:
+Versie 5.2 maakt expliciet onderscheid tussen:
 
-- Een KvK-inschrijving met een passende **zorg-SBI-code** kan ertoe leiden dat de onderneming zichtbaar wordt op [zoeken.zorgaanbiedersportaal.nl](https://zoeken.zorgaanbiedersportaal.nl). De status is dan echter "nog niet gemeld".
-- Zichtbaarheid in het LRZa is **niet hetzelfde** als de Wtza-melding. De Wtza-melding bij de IGJ is een aparte, actieve handeling die de waarnemer zelf moet doen via [toetredingzorgaanbieders.nl/melden](https://www.toetredingzorgaanbieders.nl/melden), uiterlijk drie maanden vóór de start van de zorg.
+- inschrijving in het **KvK-handelsregister**;
+- melding in het kader van de **Wet toetreding zorgaanbieders (Wtza)**;
+- controle van de vermelding in het **Landelijk Register Zorgaanbieders (LRZa)**.
 
-De pre-download checklist in v5.2 splitst deze twee verklaringen daarom in twee aparte vinkjes, en biedt directe links naar het zorgaanbiedersportaal (om de eigen vermelding te checken) en het meldportaal van de IGJ.
+Een KvK-inschrijving met een passende zorg-SBI-code kan ertoe leiden dat een onderneming zichtbaar wordt in het LRZa/Zorgaanbiedersportaal. Dat is niet hetzelfde als de Wtza-melding. De Wtza-melding is een aparte handeling die de waarnemer zelf moet doen.
 
-De meldplicht geldt voor alle waarnemend huisartsen die vanuit een eigen onderneming werken — zowel bij incidentele waarneming als bij duurwaarneming. Alleen huisartsen volledig in loondienst zijn uitgezonderd.
+Daarom bevat de pre-downloadchecklist een aparte bevestiging voor de Wtza-melding en LRZa-controle. De tool controleert dit niet automatisch; de gebruiker blijft zelf verantwoordelijk.
+
+Handige bronnen:
+
+- Zorgaanbiedersportaal — controleer je LRZa-vermelding: https://zoeken.zorgaanbiedersportaal.nl
+- Toetreding zorgaanbieders — Wtza-melding doen: https://www.toetredingzorgaanbieders.nl/melden
+- LHV — Wet toetreding zorgaanbieders: https://www.lhv.nl/thema/praktijkzaken/wet-toetreding-zorgaanbieders-wtza/
+
+## Aanvullende vooraf-check
+
+Deze contractgenerator helpt bij het maken van een passende modelovereenkomst. De feitelijke uitvoering van de opdracht blijft minstens zo belangrijk.
+
+Voor een bredere, oriënterende vooraf-check op DBA-/schijnzelfstandigheidsrisico is er een aparte, niet-officiële werkversie beschikbaar:
+
+https://nickphysix.github.io/Huisarts-zzp-risicoscan/
+
+De Waarneem-Risicoscan geeft geen juridisch of fiscaal advies, geen vrijwaring en is niet verbonden aan de officiële LHV-Vergewistool.
 
 ## Lokale opslag en privacy
 
@@ -101,6 +119,7 @@ De tool is bewust eenvoudig gehouden:
 - geen server-side verwerking;
 - geen externe scripts of CDN's;
 - `.docx`-export via client-side generatie;
+- consistente bestandsnamen met contracttype, `YYYYMM`, opdrachtgever en opdrachtnemer;
 - geschikt voor GitHub Pages.
 
 De keuze voor één codebase is bewust. Een aparte "simpele" incidentele variant zou extra onderhoudslast geven en verhoogt het risico dat teksten, bronverwijzingen of Belastingdienstnummers uit elkaar gaan lopen.
@@ -113,36 +132,44 @@ Controleer altijd de meest recente officiële informatie:
 - Belastingdienst modelovereenkomst incidentele waarneming huisarts: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/brochures_en_publicaties/voorbeeldovereenkomst_huisarts_incidentele_waarneming_LHV
 - Belastingdienst modelovereenkomst duurwaarneming huisarts: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/brochures_en_publicaties/voorbeeldovereenkomst_duurwaarneming_huisarts
 - LHV — Zzp-wetgeving in de huisartsenzorg: https://www.lhv.nl/thema/praktijkzaken/zzp-wetgeving-huisartsenzorg/
-- LHV — Wet toetreding zorgaanbieders (Wtza): https://www.lhv.nl/thema/praktijkzaken/wet-toetreding-zorgaanbieders-wtza/
-- Zorgaanbiedersportaal (LRZa): https://zoeken.zorgaanbiedersportaal.nl
-- Toetredingzorgaanbieders.nl (Wtza-melding bij IGJ): https://www.toetredingzorgaanbieders.nl/melden
+- LHV — Wtza: https://www.lhv.nl/thema/praktijkzaken/wet-toetreding-zorgaanbieders-wtza/
+- Zorgaanbiedersportaal / LRZa: https://zoeken.zorgaanbiedersportaal.nl
+- Toetreding zorgaanbieders / Wtza-melding: https://www.toetredingzorgaanbieders.nl/melden
 
 ## Disclaimer
 
-Deze tool is een persoonlijk, niet-commercieel hulpmiddel. De tool is niet verbonden aan de LHV, de Belastingdienst, de IGJ of een andere officiële instantie.
+Deze tool is een persoonlijk, niet-commercieel hulpmiddel. De tool is niet verbonden aan de LHV, de Belastingdienst, IGJ, CIBG of een andere officiële instantie.
 
-Gebruik van deze tool is voor eigen verantwoordelijkheid. Laat het gegenereerde contract controleren wanneer de situatie afwijkt van standaard tijdelijke waarneming of wanneer er twijfel bestaat over arbeidsrelatie, fiscale kwalificatie, duur, verlenging, gezagsverhouding, praktijkmedewerking of ANW-diensten.
+Gebruik van deze tool is voor eigen verantwoordelijkheid. Laat het gegenereerde contract controleren wanneer de situatie afwijkt van standaard tijdelijke waarneming of wanneer er twijfel bestaat over arbeidsrelatie, fiscale kwalificatie, duur, verlenging, gezagsverhouding, praktijkmedewerking, ANW-diensten, Wtza-melding of LRZa-vermelding.
 
-Doorgaan na een waarschuwing betekent alleen dat de gebruiker bewust verdergaat; het betekent niet dat de tool, de maker, de LHV of de Belastingdienst bevestigt dat het gekozen model passend is.
+Doorgaan na een waarschuwing betekent alleen dat de gebruiker bewust verdergaat; het betekent niet dat de tool, de maker, de LHV, de Belastingdienst, IGJ of CIBG bevestigt dat het gekozen model passend is.
 
 ## Versie
 
-**v5.2**
+**v5.2.1**
+
+Hotfix ten opzichte van v5.2:
+
+- voorkomt dat een leeg optioneel tijdenveld in duurwaarneming als `[tijden]` of `([tijden])` in de preview of het gegenereerde contract verschijnt;
+- verduidelijkt het veld **Tijden / spreekuurblokken** bij duurwaarneming als optioneel;
+- maakt de bestandsnamen consistenter: `overeenkomst_incidentele_waarneming_YYYYMM_opdrachtgever_opdrachtnemer.docx` en `overeenkomst_duurwaarneming_YYYYMM_opdrachtgever_opdrachtnemer.docx`;
+- gebruikt voor `YYYYMM` de startdatum van de waarneming wanneer beschikbaar, met de huidige maand als fallback.
+
+### v5.2
 
 Belangrijkste wijzigingen ten opzichte van v5.1.1:
 
-- pre-download checklist splitst KvK-inschrijving en Wtza-melding/LRZa-status in twee aparte vinkjes;
-- de Wtza-meldplicht (chk4) is nu ook opgenomen in de checklist voor **incidentele** waarneming (in v5.1.1 stond deze alleen bij duurwaarneming);
-- directe links bij het Wtza-vinkje naar [zoeken.zorgaanbiedersportaal.nl](https://zoeken.zorgaanbiedersportaal.nl) (eigen vermelding controleren) en [toetredingzorgaanbieders.nl/melden](https://www.toetredingzorgaanbieders.nl/melden) (Wtza-melding doen);
-- bronnen-modal uitgebreid met een aparte sectie "Wtza & Landelijk Register Zorgaanbieders";
-- README en ABOUT bijgewerkt met een toelichting op het verschil tussen KvK-inschrijving en Wtza-melding;
-- contracttekst zelf (clausules 5.7 duurwaarneming / 5.8 incidenteel) is **niet** gewijzigd; de Belastingdienst-beoordeelde bepalingen blijven ongewijzigd overgenomen.
+- Wtza-melding expliciet gescheiden van KvK-inschrijving;
+- zowel incidentele waarneming als duurwaarneming vragen expliciet: “Ik heb mij gemeld bij de IGJ in het kader van de Wtza en mijn status in het Landelijk Register Zorgaanbieders (LRZa) gecontroleerd.”;
+- LRZa/Zorgaanbiedersportaal toegevoegd aan toelichting en checklist;
+- pre-downloadchecklist uitgebreid met Wtza/LRZa-controle;
+- README/ABOUT bijgewerkt op de v5.2-positionering.
 
-### v5.1.1
+Belangrijkste wijzigingen ten opzichte van v5.0/v5.1:
 
 - wizardtekst aangescherpt van "Aanbeveling" naar "Waarschijnlijk passend model";
-- nieuwe wegwijzerstap voor type inzet (aaneengesloten / losse dagen / structureel);
-- onderscheid tussen aaneengesloten periode en losse vooraf bepaalde dagen, inclusief gerichte waarschuwingen;
-- geen automatische terugkeer naar eerder gekozen contracttype zonder bevestiging;
-- README en ABOUT afgestemd op de gecombineerde incidenteel/duurwaarneming-flow;
-- waarschuwingen bij twijfel tussen duurwaarneming en praktijkmedewerking zijn adviserend gemaakt: de officiële LHV-route blijft de primaire suggestie, maar bewust doorgaan met duurwaarneming kan op eigen verantwoordelijkheid.
+- extra stap **type inzet** toegevoegd;
+- onderscheid tussen aaneengesloten periode, losse vooraf bepaalde dagen en structureel rooster;
+- hergebruik van eerder gekozen contracttype aangepast: geen automatische restore zonder bevestiging;
+- bij grijze routes tussen duurwaarneming en praktijkmedewerking: waarschuwing en eigen-verantwoordelijkheid, maar geen automatische blokkade;
+- aparte bevestiging bij incidenteel gebruik na >7 dagen-waarschuwing.
