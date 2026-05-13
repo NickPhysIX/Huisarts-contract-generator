@@ -65,6 +65,9 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 5. **Wtza/LRZa-controlepunt**  
    Versie 5.2 voegt een expliciete checklistregel toe voor Wtza-melding en controle van de LRZa-vermelding, naast KvK-inschrijving.
 
+6. **Geschillencommissie-controlepunt**  
+   Versie 5.2.2 voegt een aparte checklistregel toe voor aansluiting bij een erkende geschillencommissie, met SKGE en DOKh als gebruikelijke voorbeelden voor huisartsen.
+
 6. **Client-side `.docx`-export**  
    Het contract wordt lokaal in de browser gegenereerd als Word-document, zonder externe libraries.
 
@@ -81,6 +84,7 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 - Verplicht een pre-download checklist waarin de gebruiker bevestigt dat de feitelijke situatie past bij het gekozen model.
 - Laat bij grijze routes tussen duurwaarneming en praktijkmedewerking bewust doorgaan toe, maar alleen met duidelijke waarschuwing dat de keuze voor rekening van partijen blijft.
 - Maakt expliciet onderscheid tussen KvK-inschrijving, Wtza-melding en LRZa-controle.
+- Bevat een apart controlepunt voor aansluiting bij een geschillencommissie.
 - Draait volledig client-side: ingevulde contractgegevens worden niet naar een server verstuurd.
 
 ## Wat doet de tool niet?
@@ -89,6 +93,7 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 - **Geen fiscaal advies.** De tool geeft geen oordeel over loonheffingen, ondernemerschap of fiscale kwalificatie.
 - **Geen garantie op Belastingdienst-conformiteit.** De uiteindelijke kwalificatie hangt af van feitelijke uitvoering, niet alleen van de contracttekst.
 - **Geen Wtza- of LRZa-check namens de gebruiker.** De tool verwijst en herinnert, maar controleert geen registratie of melding automatisch.
+- **Geen controle op aansluiting bij een geschillencommissie namens de gebruiker.** De tool verwijst en herinnert, maar verifieert geen aansluiting automatisch.
 - **Geen vervanging van de officiële LHV-contractgenerator.** Voor praktijkmedewerking en ANW-only afspraken verwijst de tool naar de LHV-route.
 - **Geen onderhoudscontract.** Dit is een persoonlijk project zonder garanties. Bij wijzigingen in wet- en regelgeving kan de tool verouderen. De huidige modelovereenkomsten zijn geldig tot en met 31 december 2029.
 
@@ -123,6 +128,17 @@ De tool maakt daarbij bewust onderscheid tussen drie dingen:
 
 De pre-downloadchecklist bevat daarom bij zowel incidentele waarneming als duurwaarneming een aparte bevestiging dat de gebruiker zich heeft gemeld bij de IGJ in het kader van de Wtza en de LRZa-vermelding heeft gecontroleerd. Dit is een bewust controlepunt, geen automatische verificatie.
 
+## Geschillencommissie
+
+Versie 5.2.2 voegt ook een expliciet controlepunt toe voor aansluiting bij een erkende geschillencommissie. Dit past naast de Wtza/LRZa-laag als praktische vooraf-check: het is geen DBA-beoordeling, maar wel een afzonderlijk compliance-risico.
+
+De tool noemt SKGE en DOKh als gebruikelijke voorbeelden voor huisartsen:
+
+- SKGE — https://www.skge.nl/zorgverleners/dienstverlening/
+- DOKh — https://dokh.nl/klachten-geschillen/
+
+Ook hier geldt: de tool controleert dit niet automatisch. De gebruiker blijft zelf verantwoordelijk voor de daadwerkelijke aansluiting en actuele toepasselijkheid.
+
 ## Aanvullende vooraf-check: Waarneem-Risicoscan
 
 Deze contractgenerator helpt bij het maken van een passende modelovereenkomst. De feitelijke uitvoering van de opdracht blijft minstens zo belangrijk.
@@ -142,8 +158,9 @@ De gegenereerde contracttekst komt inhoudelijk overeen met de LHV-modelovereenko
 3. **ANW-only afspraken** maken geen onderdeel uit van deze generator. Voor ANW-only contracten verwijst de tool door naar de LHV-route. Binnen duurwaarneming kunnen ANW-diensten wel beperkt worden opgenomen.
 4. **Praktijkmedewerking** wordt niet als contracttype gegenereerd — de tool verwijst naar de LHV-contractgenerator wanneer de wegwijzer aangeeft dat dit waarschijnlijk het passende model is. In grijze routes kan de gebruiker toch doorgaan met duurwaarneming op eigen verantwoordelijkheid.
 5. **Wtza/LRZa** zijn toegevoegd als praktische controlepunten in toelichting en checklist. De contracttekst zelf wordt daardoor niet omgevormd tot een Wtza- of registratiebeoordeling.
-6. **De export is een echte `.docx`** in plaats van een HTML-als-`.doc` workaround. De OOXML-structuur wordt client-side opgebouwd zonder externe libraries.
-7. **Bestandsnamen zijn gestandaardiseerd** zodat incidentele waarneming en duurwaarneming hetzelfde patroon gebruiken, inclusief `YYYYMM` op basis van de startdatum wanneer beschikbaar.
+6. **Geschillencommissie-aansluiting** is toegevoegd als apart praktisch controlepunt in de pre-downloadchecklist. De contracttekst zelf wordt daardoor niet omgevormd tot een klachten- of geschillenreglement.
+7. **De export is een echte `.docx`** in plaats van een HTML-als-`.doc` workaround. De OOXML-structuur wordt client-side opgebouwd zonder externe libraries.
+8. **Bestandsnamen zijn gestandaardiseerd** zodat incidentele waarneming en duurwaarneming hetzelfde patroon gebruiken, inclusief `YYYYMM` op basis van de startdatum wanneer beschikbaar.
 
 ## Privacy
 
@@ -186,7 +203,7 @@ Dit past bij het karakter van de tool: ondersteunen, structureren en waarschuwen
 
 ## Aansprakelijkheid
 
-**Gebruik op eigen risico.** Er wordt geen aansprakelijkheid aanvaard voor gevolgen van het gebruik van de gegenereerde contracten, onjuiste classificatie van de arbeidsrelatie, onjuiste invoer door de gebruiker, onjuiste of ontbrekende Wtza-melding/LRZa-controle, of wijzigingen in wet- en regelgeving na de laatste update.
+**Gebruik op eigen risico.** Er wordt geen aansprakelijkheid aanvaard voor gevolgen van het gebruik van de gegenereerde contracten, onjuiste classificatie van de arbeidsrelatie, onjuiste invoer door de gebruiker, onjuiste of ontbrekende Wtza-melding/LRZa-controle, ontbrekende of onjuiste aansluiting bij een geschillencommissie, of wijzigingen in wet- en regelgeving na de laatste update.
 
 De uiteindelijke verantwoordelijkheid voor controle, passend gebruik en ondertekening blijft bij de gebruiker.
 
@@ -200,11 +217,20 @@ De tool verwijst naar en is inhoudelijk geïnspireerd door:
 - algemene Belastingdienstinformatie over modelovereenkomsten;
 - LHV-informatie over zzp-wetgeving en Wtza;
 - het Zorgaanbiedersportaal/LRZa;
-- Toetredingzorgaanbieders.nl voor de Wtza-melding.
+- Toetredingzorgaanbieders.nl voor de Wtza-melding;
+- SKGE en DOKh als voorbeelden van geschilleninstanties voor huisartsen.
 
 Gebruikers moeten altijd de actuele officiële bronnen raadplegen voordat zij op de tekst vertrouwen.
 
 ## Versie
+
+**v5.2.2**
+
+Checklist-update ten opzichte van v5.2.1:
+
+- extra pre-downloadchecklistregel voor aansluiting bij een erkende geschillencommissie;
+- SKGE en DOKh toegevoegd als gebruikelijke voorbeelden voor huisartsen;
+- README/ABOUT en zichtbare versie-aanduiding bijgewerkt.
 
 **v5.2.1**
 

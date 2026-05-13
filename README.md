@@ -30,6 +30,7 @@ De tool helpt bij:
 - het invullen van opdrachtgever-, waarnemer-, datum-, tijd-, tarief- en contractgegevens;
 - het tonen van model-specifieke waarschuwingen, eigen-verantwoordelijkheidsteksten en pre-downloadchecklists;
 - het expliciet scheiden van **KvK-inschrijving**, **Wtza-melding** en controle van het **Landelijk Register Zorgaanbieders (LRZa)**;
+- het opnemen van een extra controlepunt voor aansluiting bij een **geschillencommissie**;
 - het maken van een echte `.docx`-export;
 - het lokaal onthouden van optionele gegevens op het apparaat van de gebruiker.
 
@@ -88,6 +89,15 @@ Handige bronnen:
 - Toetreding zorgaanbieders — Wtza-melding doen: https://www.toetredingzorgaanbieders.nl/melden
 - LHV — Wet toetreding zorgaanbieders: https://www.lhv.nl/thema/praktijkzaken/wet-toetreding-zorgaanbieders-wtza/
 
+## Geschillencommissie
+
+De pre-downloadchecklist bevat ook een praktische bevestiging dat de waarnemer is aangesloten bij een erkende geschillencommissie voor de behandeling van klachten en geschillen. De tool controleert dit niet automatisch; de gebruiker blijft zelf verantwoordelijk.
+
+Gebruikelijke geschilleninstanties voor huisartsen zijn onder meer:
+
+- SKGE — dienstverlening voor zorgverleners: https://www.skge.nl/zorgverleners/dienstverlening/
+- DOKh — klachten en geschillen: https://dokh.nl/klachten-geschillen/
+
 ## Aanvullende vooraf-check
 
 Deze contractgenerator helpt bij het maken van een passende modelovereenkomst. De feitelijke uitvoering van de opdracht blijft minstens zo belangrijk.
@@ -135,16 +145,26 @@ Controleer altijd de meest recente officiële informatie:
 - LHV — Wtza: https://www.lhv.nl/thema/praktijkzaken/wet-toetreding-zorgaanbieders-wtza/
 - Zorgaanbiedersportaal / LRZa: https://zoeken.zorgaanbiedersportaal.nl
 - Toetreding zorgaanbieders / Wtza-melding: https://www.toetredingzorgaanbieders.nl/melden
+- SKGE — dienstverlening voor zorgverleners: https://www.skge.nl/zorgverleners/dienstverlening/
+- DOKh — klachten en geschillen: https://dokh.nl/klachten-geschillen/
 
 ## Disclaimer
 
 Deze tool is een persoonlijk, niet-commercieel hulpmiddel. De tool is niet verbonden aan de LHV, de Belastingdienst, IGJ, CIBG of een andere officiële instantie.
 
-Gebruik van deze tool is voor eigen verantwoordelijkheid. Laat het gegenereerde contract controleren wanneer de situatie afwijkt van standaard tijdelijke waarneming of wanneer er twijfel bestaat over arbeidsrelatie, fiscale kwalificatie, duur, verlenging, gezagsverhouding, praktijkmedewerking, ANW-diensten, Wtza-melding of LRZa-vermelding.
+Gebruik van deze tool is voor eigen verantwoordelijkheid. Laat het gegenereerde contract controleren wanneer de situatie afwijkt van standaard tijdelijke waarneming of wanneer er twijfel bestaat over arbeidsrelatie, fiscale kwalificatie, duur, verlenging, gezagsverhouding, praktijkmedewerking, ANW-diensten, Wtza-melding, LRZa-vermelding of aansluiting bij een geschillencommissie.
 
 Doorgaan na een waarschuwing betekent alleen dat de gebruiker bewust verdergaat; het betekent niet dat de tool, de maker, de LHV, de Belastingdienst, IGJ of CIBG bevestigt dat het gekozen model passend is.
 
 ## Versie
+
+**v5.2.2**
+
+Checklist-update ten opzichte van v5.2.1:
+
+- voegt aan de pre-downloadchecklist voor zowel incidentele waarneming als duurwaarneming een expliciet controlepunt toe voor aansluiting bij een erkende geschillencommissie;
+- noemt SKGE en DOKh als gebruikelijke geschilleninstanties voor huisartsen;
+- werkt versie-aanduiding en documentatie bij.
 
 **v5.2.1**
 
