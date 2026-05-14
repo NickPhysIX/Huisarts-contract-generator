@@ -38,7 +38,7 @@ Ontwikkeld door **Niels Braakman** als persoonlijk project.
 Dit project is een experiment in **multi-AI samenwerking**. Het bouwproces bestond uit meerdere iteraties waarbij verschillende LLM-modellen zijn gebruikt voor het bouwen van de tool en feedback geven op het resultaat.
 
 - **Claude (Anthropic)** — architectuur, formulierlogica, juridische structuur, iteratieve bugfixes, mobiele UX, iOS Share Sheet integratie, PWA-setup, en de uitbreiding naar duurwaarneming inclusief wegwijzer en type-inzet-flow.
-- **ChatGPT (OpenAI)** — meerdere rondes van red-teaming en juridische review, concrete punchlists voor verbeteringen, de native `.docx`-export-engine (OOXML-generatie zonder externe libraries), finetuning van de v5.1/v5.1.1 wijzigingen, en documentatie/positionering voor de v5.2 Wtza/LRZa-aanscherping.
+- **ChatGPT (OpenAI)** — meerdere rondes van red-teaming en juridische review, concrete punchlists voor verbeteringen, de native `.docx`-export-engine (OOXML-generatie zonder externe libraries), finetuning van de v5.1/v5.1.1 wijzigingen, documentatie/positionering voor de v5.2 Wtza/LRZa-aanscherping, de geschillencommissie-check (v5.2.2) en de v5.2.4 GitHub-polish (`rel="noopener noreferrer"`-hardening).
 - **Gemini (Google)** — privacy-review en UX-suggesties.
 
 De resulterende tool is stap voor stap verbeterd tot een stabiele versie. De eindregie — welke suggesties wel of niet zijn doorgevoerd, de inhoudelijke afwegingen en deployment — lag bij mij.
@@ -68,10 +68,10 @@ De tool voegt bovenop de modelovereenkomsten een gebruikslaag toe:
 6. **Geschillencommissie-controlepunt**  
    Versie 5.2.2 voegt een aparte checklistregel toe voor aansluiting bij een erkende geschillencommissie, met SKGE en DOKh als gebruikelijke voorbeelden voor huisartsen.
 
-6. **Client-side `.docx`-export**  
+7. **Client-side `.docx`-export**  
    Het contract wordt lokaal in de browser gegenereerd als Word-document, zonder externe libraries.
 
-7. **Bewuste hergebruik-bevestiging**  
+8. **Bewuste hergebruik-bevestiging**  
    Bij hergebruik van de tool wordt het eerder gekozen contracttype niet automatisch toegepast: de gebruiker bevestigt expliciet of de wegwijzer opnieuw moet worden doorlopen.
 
 ## Wat doet de tool wél?
@@ -201,6 +201,8 @@ De tool doet dan drie dingen:
 
 Dit past bij het karakter van de tool: ondersteunen, structureren en waarschuwen, maar niet namens partijen beslissen. De tool blijft géén praktijkmedewerking-overeenkomst genereren.
 
+Er is één bewuste uitzondering op deze advieslaag-aanpak. Wanneer de gebruiker in de wegwijzer kiest voor **lang of doorlopend** (stap 1) of voor een **structureel of terugkerend rooster** (stap 2), biedt de tool géén secundaire route naar duurwaarneming aan. Deze antwoorden bevestigen feitelijk dat het geen tijdelijke waarneming is. Een grijze-routeknop zou hier de boodschap ondergraven. De gebruiker kan wel de wegwijzer opnieuw beginnen wanneer een antwoord onbedoeld is gegeven.
+
 ## Aansprakelijkheid
 
 **Gebruik op eigen risico.** Er wordt geen aansprakelijkheid aanvaard voor gevolgen van het gebruik van de gegenereerde contracten, onjuiste classificatie van de arbeidsrelatie, onjuiste invoer door de gebruiker, onjuiste of ontbrekende Wtza-melding/LRZa-controle, ontbrekende of onjuiste aansluiting bij een geschillencommissie, of wijzigingen in wet- en regelgeving na de laatste update.
@@ -223,6 +225,23 @@ De tool verwijst naar en is inhoudelijk geïnspireerd door:
 Gebruikers moeten altijd de actuele officiële bronnen raadplegen voordat zij op de tekst vertrouwen.
 
 ## Versie
+
+**v5.2.4**
+
+GitHub-polish ten opzichte van v5.2.3:
+
+- alle externe links met `target="_blank"` in de app zijn voorzien van `rel="noopener noreferrer"` als security- en privacy-best-practice (voorkomt `window.opener`-toegang en referer-leak naar derde partijen);
+- versie-aanduiding bijgewerkt in title, header, footer en code-commentaar;
+- "GitHub-polish" toegevoegd aan de header-version-label;
+- geen functionele wijzigingen in de tool zelf.
+
+**v5.2.3**
+
+Documentatie- en consistentiefix ten opzichte van v5.2.2:
+
+- nummering van de sectie "Wat de tool toevoegt" rechtgetrokken (dubbele 6.);
+- "Advieslaag, geen poortwachter" uitgebreid met de bewuste uitzondering voor de wegwijzer-antwoorden "lang of doorlopend" en "structureel of terugkerend rooster";
+- geen functionele wijzigingen in de tool zelf.
 
 **v5.2.2**
 

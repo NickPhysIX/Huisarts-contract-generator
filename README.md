@@ -158,6 +158,24 @@ Doorgaan na een waarschuwing betekent alleen dat de gebruiker bewust verdergaat;
 
 ## Versie
 
+**v5.2.4**
+
+GitHub-polish ten opzichte van v5.2.3:
+
+- alle externe links met `target="_blank"` in de app zijn voorzien van `rel="noopener noreferrer"` als security- en privacy-best-practice (voorkomt `window.opener`-toegang en referer-leak naar derde partijen);
+- versie-aanduiding bijgewerkt in title, header, footer en code-commentaar;
+- "GitHub-polish" toegevoegd aan de header-version-label;
+- geen functionele wijzigingen in de tool zelf.
+
+**v5.2.3**
+
+Documentatie- en consistentiefix ten opzichte van v5.2.2:
+
+- nummering van de sectie "Wat de tool toevoegt" in `ABOUT.md` rechtgetrokken (dubbele 6.);
+- toelichting "Advieslaag, geen poortwachter" aangevuld met de bewuste uitzondering voor de wegwijzer-antwoorden "lang of doorlopend" en "structureel of terugkerend rooster";
+- versie-aanduiding bijgewerkt;
+- geen functionele wijzigingen in de tool zelf.
+
 **v5.2.2**
 
 Checklist-update ten opzichte van v5.2.1:
